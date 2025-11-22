@@ -1,0 +1,22 @@
+Quartus Prime Archive log --	C:/MyPrj/L11_Timer/L11_Timer_tmp_archive.qarlog
+
+Archive:	C:/MyPrj/L11_Timer/L11_Timer_tmp_archive.qar
+Date:		Wed Feb 06 20:47:21 2019
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/MyPrj/L11_Timer/L11_Timer.qpf
+C:/MyPrj/L11_Timer/Timer.v
+C:/MyPrj/L11_Timer/TopModule.qsf
+C:/MyPrj/L11_Timer/TopModule.v
+C:/MyPrj/L11_Timer/assignment_defaults.qdf
+	======= Total: 5 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Wed Feb 06 20:47:23 2019
+Source archive file:	C:/MyPrj/L11_Timer/L11_Timer_tmp_archive.qar
+Archive was extracted into	C:/MyPrj/L25_TimingAnalyzer/
+		 - successfully.

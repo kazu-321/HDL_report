@@ -1,0 +1,42 @@
+module m_10_counter(input clk, output [3:0] q, output reg c);
+    reg [3:0] cnt;
+    assign q = cnt;
+
+    always @(posedge clk) begin
+        if (cnt == 4'd9) begin
+            cnt <= 4'd0;
+            c <= 1'b1;
+        end else begin
+            cnt <= cnt + 4'd1;
+            c <= 1'b0;
+        end
+    end
+endmodule
+
+module m_6_counter(input clk, output [2:0] q, output reg c);
+    reg [2:0] cnt;
+    assign q = cnt;
+
+    always @(posedge clk) begin
+        if (cnt == 3'd5) begin
+            cnt <= 3'd0;
+            c <= 1'b1;
+        end else begin
+            cnt <= cnt + 3'd1;
+            c <= 1'b0;
+        end
+    end
+endmodule
+
+module m_24_counter(input clk, output [3:0] q0, output [3:0] q1);
+    reg [4:0] cnt;
+
+    always @(posedge clk) begin
+        if (cnt == 5'd23)
+            cnt <= 5'd0;
+        else
+            cnt <= cnt + 5'd1;
+    end
+    assign q1 = cnt / 5'd10; // tens (0..2)
+    assign q0 = cnt % 5'd10; // units (0..9)
+endmodule

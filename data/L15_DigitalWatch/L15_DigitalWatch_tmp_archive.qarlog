@@ -1,0 +1,23 @@
+Quartus Prime Archive log --	C:/MyPrj/L15_DigitalWatch/L15_DigitalWatch_tmp_archive.qarlog
+
+Archive:	C:/MyPrj/L15_DigitalWatch/L15_DigitalWatch_tmp_archive.qar
+Date:		Tue Feb 05 18:06:40 2019
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/MyPrj/L15_DigitalWatch/DititalWatch.v
+C:/MyPrj/L15_DigitalWatch/L15_DigitalWatch.qpf
+C:/MyPrj/L15_DigitalWatch/TopModule.qsf
+C:/MyPrj/L15_DigitalWatch/TopModule.v
+C:/MyPrj/L15_DigitalWatch/UniversalCounter.v
+C:/MyPrj/L15_DigitalWatch/assignment_defaults.qdf
+	======= Total: 6 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Tue Feb 05 18:06:42 2019
+Source archive file:	C:/MyPrj/L15_DigitalWatch/L15_DigitalWatch_tmp_archive.qar
+Archive was extracted into	C:/MyPrj/L25_DigitalWatch_timing/
+		 - successfully.
