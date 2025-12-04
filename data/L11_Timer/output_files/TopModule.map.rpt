@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TopModule
-Thu Nov 20 09:29:49 2025
+Thu Dec  4 10:11:10 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -50,15 +50,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 20 09:29:49 2025           ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec  4 10:11:10 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; TopModule                                       ;
 ; Top-level Entity Name              ; TopModule                                       ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 222                                             ;
-;     Total combinational functions  ; 207                                             ;
-;     Dedicated logic registers      ; 95                                              ;
-; Total registers                    ; 95                                              ;
+; Total logic elements               ; 230                                             ;
+;     Total combinational functions  ; 215                                             ;
+;     Dedicated logic registers      ; 96                                              ;
+; Total registers                    ; 96                                              ;
 ; Total pins                         ; 72                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -178,20 +178,20 @@ on the Quartus Prime software download page.
 +----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
 +----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
-; TopModule.v                      ; yes             ; User Verilog HDL File        ; /home/kazu/school/HDL/data/L11_Timer/TopModule.v                                      ;         ;
-; SevenSegment.v                   ; yes             ; User Verilog HDL File        ; /home/kazu/school/HDL/data/L11_Timer/SevenSegment.v                                   ;         ;
-; Counter.v                        ; yes             ; User Verilog HDL File        ; /home/kazu/school/HDL/data/L11_Timer/Counter.v                                        ;         ;
-; Timer.v                          ; yes             ; User Verilog HDL File        ; /home/kazu/school/HDL/data/L11_Timer/Timer.v                                          ;         ;
+; TopModule.v                      ; yes             ; User Verilog HDL File        ; /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v                               ;         ;
+; SevenSegment.v                   ; yes             ; User Verilog HDL File        ; /home/kazu/school/HDL/report/data/L11_Timer/SevenSegment.v                            ;         ;
+; Counter.v                        ; yes             ; User Verilog HDL File        ; /home/kazu/school/HDL/report/data/L11_Timer/Counter.v                                 ;         ;
+; Timer.v                          ; yes             ; User Verilog HDL File        ; /home/kazu/school/HDL/report/data/L11_Timer/Timer.v                                   ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/kazu/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/kazu/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/kazu/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
 ; aglobal241.inc                   ; yes             ; Megafunction                 ; /home/kazu/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/aglobal241.inc      ;         ;
-; db/lpm_divide_9kl.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/kazu/school/HDL/data/L11_Timer/db/lpm_divide_9kl.tdf                            ;         ;
-; db/sign_div_unsign_8kh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/kazu/school/HDL/data/L11_Timer/db/sign_div_unsign_8kh.tdf                       ;         ;
-; db/alt_u_div_qee.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/kazu/school/HDL/data/L11_Timer/db/alt_u_div_qee.tdf                             ;         ;
-; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/kazu/school/HDL/data/L11_Timer/db/add_sub_t3c.tdf                               ;         ;
-; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/kazu/school/HDL/data/L11_Timer/db/add_sub_u3c.tdf                               ;         ;
-; db/lpm_divide_6sl.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/kazu/school/HDL/data/L11_Timer/db/lpm_divide_6sl.tdf                            ;         ;
+; db/lpm_divide_9kl.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/kazu/school/HDL/report/data/L11_Timer/db/lpm_divide_9kl.tdf                     ;         ;
+; db/sign_div_unsign_8kh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/kazu/school/HDL/report/data/L11_Timer/db/sign_div_unsign_8kh.tdf                ;         ;
+; db/alt_u_div_qee.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/kazu/school/HDL/report/data/L11_Timer/db/alt_u_div_qee.tdf                      ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/kazu/school/HDL/report/data/L11_Timer/db/add_sub_t3c.tdf                        ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/kazu/school/HDL/report/data/L11_Timer/db/add_sub_u3c.tdf                        ;         ;
+; db/lpm_divide_6sl.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/kazu/school/HDL/report/data/L11_Timer/db/lpm_divide_6sl.tdf                     ;         ;
 +----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
@@ -200,20 +200,20 @@ on the Quartus Prime software download page.
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Estimated Total logic elements              ; 222                    ;
+; Estimated Total logic elements              ; 230                    ;
 ;                                             ;                        ;
-; Total combinational functions               ; 207                    ;
+; Total combinational functions               ; 215                    ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 70                     ;
-;     -- 3 input functions                    ; 45                     ;
-;     -- <=2 input functions                  ; 92                     ;
+;     -- 4 input functions                    ; 71                     ;
+;     -- 3 input functions                    ; 48                     ;
+;     -- <=2 input functions                  ; 96                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 149                    ;
+;     -- normal mode                          ; 157                    ;
 ;     -- arithmetic mode                      ; 58                     ;
 ;                                             ;                        ;
-; Total registers                             ; 95                     ;
-;     -- Dedicated logic registers            ; 95                     ;
+; Total registers                             ; 96                     ;
+;     -- Dedicated logic registers            ; 96                     ;
 ;     -- I/O registers                        ; 0                      ;
 ;                                             ;                        ;
 ; I/O pins                                    ; 72                     ;
@@ -221,8 +221,8 @@ on the Quartus Prime software download page.
 ; Embedded Multiplier 9-bit elements          ; 0                      ;
 ;                                             ;                        ;
 ; Maximum fan-out node                        ; m_prescale5M:u0|Equal0 ;
-; Maximum fan-out                             ; 61                     ;
-; Total fan-out                               ; 964                    ;
+; Maximum fan-out                             ; 53                     ;
+; Total fan-out                               ; 985                    ;
 ; Average fan-out                             ; 2.16                   ;
 +---------------------------------------------+------------------------+
 
@@ -232,10 +232,10 @@ on the Quartus Prime software download page.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                 ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |TopModule                                ; 207 (5)             ; 95 (4)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 72   ; 0            ; 0          ; |TopModule                                                                                                                          ; TopModule           ; work         ;
-;    |m_10_counter_manual:c_min0|           ; 9 (9)               ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_10_counter_manual:c_min0                                                                                               ; m_10_counter_manual ; work         ;
-;    |m_10_counter_manual:c_sec0|           ; 9 (9)               ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_10_counter_manual:c_sec0                                                                                               ; m_10_counter_manual ; work         ;
-;    |m_24_counter_manual:c_hr|             ; 57 (25)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_24_counter_manual:c_hr                                                                                                 ; m_24_counter_manual ; work         ;
+; |TopModule                                ; 215 (5)             ; 96 (4)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 72   ; 0            ; 0          ; |TopModule                                                                                                                          ; TopModule           ; work         ;
+;    |m_10_counter_manual:c_min0|           ; 14 (14)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_10_counter_manual:c_min0                                                                                               ; m_10_counter_manual ; work         ;
+;    |m_10_counter_manual:c_sec0|           ; 14 (14)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_10_counter_manual:c_sec0                                                                                               ; m_10_counter_manual ; work         ;
+;    |m_24_counter_manual:c_hr|             ; 58 (26)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_24_counter_manual:c_hr                                                                                                 ; m_24_counter_manual ; work         ;
 ;       |lpm_divide:Div0|                   ; 12 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_24_counter_manual:c_hr|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_6sl:auto_generated|  ; 12 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_24_counter_manual:c_hr|lpm_divide:Div0|lpm_divide_6sl:auto_generated                                                   ; lpm_divide_6sl      ; work         ;
 ;             |sign_div_unsign_8kh:divider| ; 12 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_24_counter_manual:c_hr|lpm_divide:Div0|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
@@ -244,8 +244,8 @@ on the Quartus Prime software download page.
 ;          |lpm_divide_9kl:auto_generated|  ; 20 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_24_counter_manual:c_hr|lpm_divide:Mod0|lpm_divide_9kl:auto_generated                                                   ; lpm_divide_9kl      ; work         ;
 ;             |sign_div_unsign_8kh:divider| ; 20 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_24_counter_manual:c_hr|lpm_divide:Mod0|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
 ;                |alt_u_div_qee:divider|    ; 20 (20)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_24_counter_manual:c_hr|lpm_divide:Mod0|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ; alt_u_div_qee       ; work         ;
-;    |m_6_counter_manual:c_min1|            ; 5 (5)               ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_6_counter_manual:c_min1                                                                                                ; m_6_counter_manual  ; work         ;
-;    |m_6_counter_manual:c_sec1|            ; 5 (5)               ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_6_counter_manual:c_sec1                                                                                                ; m_6_counter_manual  ; work         ;
+;    |m_6_counter_manual:c_min1|            ; 4 (4)               ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_6_counter_manual:c_min1                                                                                                ; m_6_counter_manual  ; work         ;
+;    |m_6_counter_manual:c_sec1|            ; 4 (4)               ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_6_counter_manual:c_sec1                                                                                                ; m_6_counter_manual  ; work         ;
 ;    |m_prescale5M:u0|                      ; 31 (31)             ; 23 (23)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_prescale5M:u0                                                                                                          ; m_prescale5M        ; work         ;
 ;    |m_seven_segment:u2|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_seven_segment:u2                                                                                                       ; m_seven_segment     ; work         ;
 ;    |m_seven_segment:u3|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_seven_segment:u3                                                                                                       ; m_seven_segment     ; work         ;
@@ -253,7 +253,7 @@ on the Quartus Prime software download page.
 ;    |m_seven_segment:u5|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_seven_segment:u5                                                                                                       ; m_seven_segment     ; work         ;
 ;    |m_seven_segment:u6|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_seven_segment:u6                                                                                                       ; m_seven_segment     ; work         ;
 ;    |m_seven_segment:u7|                   ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_seven_segment:u7                                                                                                       ; m_seven_segment     ; work         ;
-;    |m_time_set:u_set|                     ; 48 (38)             ; 25 (25)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_time_set:u_set                                                                                                         ; m_time_set          ; work         ;
+;    |m_time_set:u_set|                     ; 47 (37)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_time_set:u_set                                                                                                         ; m_time_set          ; work         ;
 ;       |m_timer_decoder:u_decoder|         ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_time_set:u_set|m_timer_decoder:u_decoder                                                                               ; m_timer_decoder     ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -264,9 +264,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
-; m_time_set:u_set|manual_up_hr         ; Lost fanout                            ;
 ; m_24_counter_manual:c_hr|q1[2,3]      ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 3 ;                                        ;
+; Total Number of Removed Registers = 2 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
 
@@ -275,12 +274,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 95    ;
-; Number of registers using Synchronous Clear  ; 28    ;
-; Number of registers using Synchronous Load   ; 12    ;
+; Total registers                              ; 96    ;
+; Number of registers using Synchronous Clear  ; 29    ;
+; Number of registers using Synchronous Load   ; 7     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 22    ;
+; Number of registers using Clock Enable       ; 26    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -290,15 +289,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TopModule|m_10_counter_manual:c_sec0|c      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TopModule|m_6_counter_manual:c_min1|c       ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |TopModule|m_time_set:u_set|up_cnt[1]        ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |TopModule|m_time_set:u_set|down_cnt[2]      ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |TopModule|m_10_counter_manual:c_sec0|cnt[3] ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |TopModule|m_6_counter_manual:c_sec1|cnt[1]  ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |TopModule|m_10_counter_manual:c_min0|cnt[0] ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |TopModule|m_6_counter_manual:c_min1|cnt[1]  ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |TopModule|m_24_counter_manual:c_hr|cnt[4]   ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |TopModule|m_time_set:u_set|up_cnt[0]        ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |TopModule|m_time_set:u_set|down_cnt[0]      ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |TopModule|m_24_counter_manual:c_hr|cnt[0]   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |TopModule|m_6_counter_manual:c_sec1|c       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |TopModule|m_6_counter_manual:c_min1|c       ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |TopModule|m_10_counter_manual:c_sec0|cnt[2] ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |TopModule|m_6_counter_manual:c_sec1|cnt[0]  ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |TopModule|m_10_counter_manual:c_min0|cnt[3] ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |TopModule|m_6_counter_manual:c_min1|cnt[0]  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
@@ -382,25 +381,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 72                          ;
-; cycloneiii_ff         ; 95                          ;
-;     ENA               ; 16                          ;
-;     ENA SLD           ; 6                           ;
-;     SCLR              ; 28                          ;
-;     SLD               ; 6                           ;
-;     plain             ; 39                          ;
-; cycloneiii_lcell_comb ; 212                         ;
+; cycloneiii_ff         ; 96                          ;
+;     ENA               ; 26                          ;
+;     SCLR              ; 29                          ;
+;     SLD               ; 7                           ;
+;     plain             ; 34                          ;
+; cycloneiii_lcell_comb ; 221                         ;
 ;     arith             ; 58                          ;
 ;         2 data inputs ; 46                          ;
 ;         3 data inputs ; 12                          ;
-;     normal            ; 154                         ;
+;     normal            ; 163                         ;
 ;         0 data inputs ; 6                           ;
 ;         1 data inputs ; 15                          ;
-;         2 data inputs ; 30                          ;
-;         3 data inputs ; 33                          ;
-;         4 data inputs ; 70                          ;
+;         2 data inputs ; 35                          ;
+;         3 data inputs ; 36                          ;
+;         4 data inputs ; 71                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.70                        ;
-; Average LUT depth     ; 2.24                        ;
+; Average LUT depth     ; 2.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -419,122 +417,120 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Thu Nov 20 09:29:43 2025
+    Info: Processing started: Thu Dec  4 10:11:04 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off L11_Timer -c TopModule
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file TopModule.v
-    Info (12023): Found entity 1: TopModule File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 1
+    Info (12023): Found entity 1: TopModule File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 1
 Info (12021): Found 2 design units, including 2 entities, in source file SevenSegment.v
-    Info (12023): Found entity 1: m_seven_segment File: /home/kazu/school/HDL/data/L11_Timer/SevenSegment.v Line: 1
-    Info (12023): Found entity 2: m_seven_segment_add_dot File: /home/kazu/school/HDL/data/L11_Timer/SevenSegment.v Line: 29
+    Info (12023): Found entity 1: m_seven_segment File: /home/kazu/school/HDL/report/data/L11_Timer/SevenSegment.v Line: 1
+    Info (12023): Found entity 2: m_seven_segment_add_dot File: /home/kazu/school/HDL/report/data/L11_Timer/SevenSegment.v Line: 29
 Info (12021): Found 4 design units, including 4 entities, in source file Counter.v
-    Info (12023): Found entity 1: m_10_counter_manual File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 1
-    Info (12023): Found entity 2: m_6_counter_manual File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 41
-    Info (12023): Found entity 3: m_24_counter_manual File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 80
-    Info (12023): Found entity 4: m_time_set File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 115
-Warning (10229): Verilog HDL Expression warning at Timer.v(52): truncated literal to match 17 bits File: /home/kazu/school/HDL/data/L11_Timer/Timer.v Line: 52
+    Info (12023): Found entity 1: m_10_counter_manual File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 1
+    Info (12023): Found entity 2: m_6_counter_manual File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 46
+    Info (12023): Found entity 3: m_24_counter_manual File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 91
+    Info (12023): Found entity 4: m_time_set File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 122
+Warning (10229): Verilog HDL Expression warning at Timer.v(52): truncated literal to match 17 bits File: /home/kazu/school/HDL/report/data/L11_Timer/Timer.v Line: 52
 Info (12021): Found 5 design units, including 5 entities, in source file Timer.v
-    Info (12023): Found entity 1: m_prescale50M File: /home/kazu/school/HDL/data/L11_Timer/Timer.v Line: 2
-    Info (12023): Found entity 2: m_prescale5M File: /home/kazu/school/HDL/data/L11_Timer/Timer.v Line: 18
-    Info (12023): Found entity 3: m_prescale_50M_60Hz File: /home/kazu/school/HDL/data/L11_Timer/Timer.v Line: 33
-    Info (12023): Found entity 4: m_prescale_50M_3600Hz File: /home/kazu/school/HDL/data/L11_Timer/Timer.v Line: 48
-    Info (12023): Found entity 5: m_timer_decoder File: /home/kazu/school/HDL/data/L11_Timer/Timer.v Line: 63
+    Info (12023): Found entity 1: m_prescale50M File: /home/kazu/school/HDL/report/data/L11_Timer/Timer.v Line: 2
+    Info (12023): Found entity 2: m_prescale5M File: /home/kazu/school/HDL/report/data/L11_Timer/Timer.v Line: 18
+    Info (12023): Found entity 3: m_prescale_50M_60Hz File: /home/kazu/school/HDL/report/data/L11_Timer/Timer.v Line: 33
+    Info (12023): Found entity 4: m_prescale_50M_3600Hz File: /home/kazu/school/HDL/report/data/L11_Timer/Timer.v Line: 48
+    Info (12023): Found entity 5: m_timer_decoder File: /home/kazu/school/HDL/report/data/L11_Timer/Timer.v Line: 63
 Info (12127): Elaborating entity "TopModule" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at TopModule.v(32): object "clk_1s" assigned a value but never read File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 32
-Warning (10230): Verilog HDL assignment warning at TopModule.v(39): truncated value with size 32 to match size of target (4) File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 39
-Info (12128): Elaborating entity "m_prescale5M" for hierarchy "m_prescale5M:u0" File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 27
-Warning (10230): Verilog HDL assignment warning at Timer.v(29): truncated value with size 32 to match size of target (23) File: /home/kazu/school/HDL/data/L11_Timer/Timer.v Line: 29
-Info (12128): Elaborating entity "m_time_set" for hierarchy "m_time_set:u_set" File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 70
-Warning (10230): Verilog HDL assignment warning at Counter.v(168): truncated value with size 32 to match size of target (5) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 168
-Warning (10230): Verilog HDL assignment warning at Counter.v(175): truncated value with size 32 to match size of target (5) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 175
-Info (12128): Elaborating entity "m_timer_decoder" for hierarchy "m_time_set:u_set|m_timer_decoder:u_decoder" File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 144
-Info (12128): Elaborating entity "m_10_counter_manual" for hierarchy "m_10_counter_manual:c_sec0" File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 86
-Warning (10230): Verilog HDL assignment warning at Counter.v(24): truncated value with size 32 to match size of target (4) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 24
-Warning (10230): Verilog HDL assignment warning at Counter.v(30): truncated value with size 32 to match size of target (4) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 30
-Warning (10230): Verilog HDL assignment warning at Counter.v(34): truncated value with size 32 to match size of target (4) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 34
-Info (12128): Elaborating entity "m_6_counter_manual" for hierarchy "m_6_counter_manual:c_sec1" File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 95
-Warning (10230): Verilog HDL assignment warning at Counter.v(63): truncated value with size 32 to match size of target (3) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 63
-Warning (10230): Verilog HDL assignment warning at Counter.v(69): truncated value with size 32 to match size of target (3) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 69
-Warning (10230): Verilog HDL assignment warning at Counter.v(73): truncated value with size 32 to match size of target (3) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 73
-Info (12128): Elaborating entity "m_24_counter_manual" for hierarchy "m_24_counter_manual:c_hr" File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 124
-Warning (10230): Verilog HDL assignment warning at Counter.v(97): truncated value with size 32 to match size of target (5) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 97
-Warning (10230): Verilog HDL assignment warning at Counter.v(102): truncated value with size 32 to match size of target (5) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 102
-Warning (10230): Verilog HDL assignment warning at Counter.v(106): truncated value with size 32 to match size of target (5) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 106
-Warning (10230): Verilog HDL assignment warning at Counter.v(109): truncated value with size 32 to match size of target (4) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 109
-Warning (10230): Verilog HDL assignment warning at Counter.v(110): truncated value with size 32 to match size of target (4) File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 110
-Info (12128): Elaborating entity "m_seven_segment" for hierarchy "m_seven_segment:u2" File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 129
+Warning (10230): Verilog HDL assignment warning at TopModule.v(39): truncated value with size 32 to match size of target (4) File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 39
+Info (12128): Elaborating entity "m_prescale5M" for hierarchy "m_prescale5M:u0" File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 27
+Warning (10230): Verilog HDL assignment warning at Timer.v(29): truncated value with size 32 to match size of target (23) File: /home/kazu/school/HDL/report/data/L11_Timer/Timer.v Line: 29
+Info (12128): Elaborating entity "m_time_set" for hierarchy "m_time_set:u_set" File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 70
+Warning (10230): Verilog HDL assignment warning at Counter.v(159): truncated value with size 32 to match size of target (5) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 159
+Warning (10230): Verilog HDL assignment warning at Counter.v(166): truncated value with size 32 to match size of target (5) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 166
+Info (12128): Elaborating entity "m_timer_decoder" for hierarchy "m_time_set:u_set|m_timer_decoder:u_decoder" File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 151
+Info (12128): Elaborating entity "m_10_counter_manual" for hierarchy "m_10_counter_manual:c_sec0" File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 86
+Warning (10230): Verilog HDL assignment warning at Counter.v(18): truncated value with size 32 to match size of target (4) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 18
+Warning (10230): Verilog HDL assignment warning at Counter.v(28): truncated value with size 32 to match size of target (4) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 28
+Warning (10230): Verilog HDL assignment warning at Counter.v(37): truncated value with size 32 to match size of target (4) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 37
+Info (12128): Elaborating entity "m_6_counter_manual" for hierarchy "m_6_counter_manual:c_sec1" File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 95
+Warning (10230): Verilog HDL assignment warning at Counter.v(63): truncated value with size 32 to match size of target (3) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 63
+Warning (10230): Verilog HDL assignment warning at Counter.v(73): truncated value with size 32 to match size of target (3) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 73
+Warning (10230): Verilog HDL assignment warning at Counter.v(82): truncated value with size 32 to match size of target (3) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 82
+Info (12128): Elaborating entity "m_24_counter_manual" for hierarchy "m_24_counter_manual:c_hr" File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 124
+Warning (10230): Verilog HDL assignment warning at Counter.v(105): truncated value with size 32 to match size of target (5) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 105
+Warning (10230): Verilog HDL assignment warning at Counter.v(110): truncated value with size 32 to match size of target (5) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 110
+Warning (10230): Verilog HDL assignment warning at Counter.v(114): truncated value with size 32 to match size of target (5) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 114
+Warning (10230): Verilog HDL assignment warning at Counter.v(116): truncated value with size 32 to match size of target (4) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 116
+Warning (10230): Verilog HDL assignment warning at Counter.v(117): truncated value with size 32 to match size of target (4) File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 117
+Info (12128): Elaborating entity "m_seven_segment" for hierarchy "m_seven_segment:u2" File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 129
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "min1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 75
+    Warning (12110): Net "min1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 75
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "min1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 75
+    Warning (12110): Net "min1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 75
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "sec1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 75
-    Warning (12110): Net "min1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 75
+    Warning (12110): Net "sec1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 75
+    Warning (12110): Net "min1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 75
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "sec1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 75
-    Warning (12110): Net "min1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 75
+    Warning (12110): Net "sec1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 75
+    Warning (12110): Net "min1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 75
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "sec1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 75
-    Warning (12110): Net "min1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 75
+    Warning (12110): Net "sec1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 75
+    Warning (12110): Net "min1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 75
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "sec1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 75
-    Warning (12110): Net "min1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 75
+    Warning (12110): Net "sec1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 75
+    Warning (12110): Net "min1[3]" is missing source, defaulting to GND File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 75
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "m_24_counter_manual:c_hr|Mod0" File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 110
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "m_24_counter_manual:c_hr|Div0" File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 109
-Info (12130): Elaborated megafunction instantiation "m_24_counter_manual:c_hr|lpm_divide:Mod0" File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 110
-Info (12133): Instantiated megafunction "m_24_counter_manual:c_hr|lpm_divide:Mod0" with the following parameter: File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 110
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "m_24_counter_manual:c_hr|Mod0" File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 117
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "m_24_counter_manual:c_hr|Div0" File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 116
+Info (12130): Elaborated megafunction instantiation "m_24_counter_manual:c_hr|lpm_divide:Mod0" File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 117
+Info (12133): Instantiated megafunction "m_24_counter_manual:c_hr|lpm_divide:Mod0" with the following parameter: File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 117
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_9kl.tdf
-    Info (12023): Found entity 1: lpm_divide_9kl File: /home/kazu/school/HDL/data/L11_Timer/db/lpm_divide_9kl.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_9kl File: /home/kazu/school/HDL/report/data/L11_Timer/db/lpm_divide_9kl.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_8kh File: /home/kazu/school/HDL/data/L11_Timer/db/sign_div_unsign_8kh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_8kh File: /home/kazu/school/HDL/report/data/L11_Timer/db/sign_div_unsign_8kh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qee.tdf
-    Info (12023): Found entity 1: alt_u_div_qee File: /home/kazu/school/HDL/data/L11_Timer/db/alt_u_div_qee.tdf Line: 27
+    Info (12023): Found entity 1: alt_u_div_qee File: /home/kazu/school/HDL/report/data/L11_Timer/db/alt_u_div_qee.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
-    Info (12023): Found entity 1: add_sub_t3c File: /home/kazu/school/HDL/data/L11_Timer/db/add_sub_t3c.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_t3c File: /home/kazu/school/HDL/report/data/L11_Timer/db/add_sub_t3c.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
-    Info (12023): Found entity 1: add_sub_u3c File: /home/kazu/school/HDL/data/L11_Timer/db/add_sub_u3c.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "m_24_counter_manual:c_hr|lpm_divide:Div0" File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 109
-Info (12133): Instantiated megafunction "m_24_counter_manual:c_hr|lpm_divide:Div0" with the following parameter: File: /home/kazu/school/HDL/data/L11_Timer/Counter.v Line: 109
+    Info (12023): Found entity 1: add_sub_u3c File: /home/kazu/school/HDL/report/data/L11_Timer/db/add_sub_u3c.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "m_24_counter_manual:c_hr|lpm_divide:Div0" File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 116
+Info (12133): Instantiated megafunction "m_24_counter_manual:c_hr|lpm_divide:Div0" with the following parameter: File: /home/kazu/school/HDL/report/data/L11_Timer/Counter.v Line: 116
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6sl.tdf
-    Info (12023): Found entity 1: lpm_divide_6sl File: /home/kazu/school/HDL/data/L11_Timer/db/lpm_divide_6sl.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_6sl File: /home/kazu/school/HDL/report/data/L11_Timer/db/lpm_divide_6sl.tdf Line: 25
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 6
-    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 7
-    Warning (13410): Pin "HEX2[7]" is stuck at VCC File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 8
-    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 9
-    Warning (13410): Pin "HEX4[7]" is stuck at VCC File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 10
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 11
-    Warning (13410): Pin "HEX5[7]" is stuck at VCC File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 11
+    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 6
+    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 7
+    Warning (13410): Pin "HEX2[7]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 8
+    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 9
+    Warning (13410): Pin "HEX4[7]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 10
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 11
+    Warning (13410): Pin "HEX5[7]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 11
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 6 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLK2" File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 4
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 19
-    Warning (15610): No output dependent on input pin "SW[4]" File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 19
-    Warning (15610): No output dependent on input pin "SW[5]" File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 19
-    Warning (15610): No output dependent on input pin "SW[6]" File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 19
-    Warning (15610): No output dependent on input pin "SW[7]" File: /home/kazu/school/HDL/data/L11_Timer/TopModule.v Line: 19
-Info (21057): Implemented 294 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "CLK2" File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 19
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 19
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 19
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 19
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/kazu/school/HDL/report/data/L11_Timer/TopModule.v Line: 19
+Info (21057): Implemented 302 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 58 output pins
-    Info (21061): Implemented 222 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 50 warnings
+    Info (21061): Implemented 230 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 49 warnings
     Info: Peak virtual memory: 481 megabytes
-    Info: Processing ended: Thu Nov 20 09:29:49 2025
+    Info: Processing ended: Thu Dec  4 10:11:10 2025
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Total CPU time (on all processors): 00:00:16
 
 

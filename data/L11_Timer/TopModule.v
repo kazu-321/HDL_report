@@ -77,7 +77,7 @@ module TopModule(
 
     // 秒
     m_10_counter_manual c_sec0(
-        .clk(clk_100ms),
+        .clk(clk_1s),
         .stop(SW[8]),
         .manual_up(manual_up_sec),
         .manual_down(manual_down_sec),

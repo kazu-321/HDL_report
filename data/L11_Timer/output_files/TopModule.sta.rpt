@@ -1,5 +1,5 @@
 Timing Analyzer report for TopModule
-Thu Nov 20 09:30:01 2025
+Thu Dec  4 10:11:22 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -92,15 +92,15 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.22        ;
+; Average used               ; 1.32        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.7%      ;
-;     Processor 3            ;   1.6%      ;
-;     Processor 4            ;   1.6%      ;
-;     Processors 5-16        ;   1.4%      ;
+;     Processor 2            ;   2.4%      ;
+;     Processor 3            ;   2.3%      ;
+;     Processor 4            ;   2.3%      ;
+;     Processors 5-16        ;   2.1%      ;
 +----------------------------+-------------+
 
 
@@ -115,21 +115,23 @@ on the Quartus Prime software download page.
 ; m_10_counter_manual:c_min0|c ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { m_10_counter_manual:c_min0|c } ;
 ; m_10_counter_manual:c_sec0|c ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { m_10_counter_manual:c_sec0|c } ;
 ; m_prescale5M:u0|cnt[0]       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { m_prescale5M:u0|cnt[0] }       ;
+; SW[9]                        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { SW[9] }                        ;
 +------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary                                                                           ;
-+------------+-----------------+------------------------------+------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name                   ; Note                                           ;
-+------------+-----------------+------------------------------+------------------------------------------------+
-; 182.35 MHz ; 182.35 MHz      ; CLK1                         ;                                                ;
-; 233.92 MHz ; 233.92 MHz      ; m_6_counter_manual:c_min1|c  ;                                                ;
-; 376.08 MHz ; 376.08 MHz      ; m_prescale5M:u0|cnt[0]       ;                                                ;
-; 451.06 MHz ; 416.15 MHz      ; m_6_counter_manual:c_sec1|c  ; limit due to minimum period restriction (tmin) ;
-; 725.16 MHz ; 416.15 MHz      ; m_10_counter_manual:c_min0|c ; limit due to minimum period restriction (tmin) ;
-; 726.74 MHz ; 416.15 MHz      ; m_10_counter_manual:c_sec0|c ; limit due to minimum period restriction (tmin) ;
-+------------+-----------------+------------------------------+------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                          ;
++------------+-----------------+------------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                   ; Note                                                          ;
++------------+-----------------+------------------------------+---------------------------------------------------------------+
+; 189.11 MHz ; 189.11 MHz      ; CLK1                         ;                                                               ;
+; 232.13 MHz ; 232.13 MHz      ; m_prescale5M:u0|cnt[0]       ;                                                               ;
+; 238.89 MHz ; 238.89 MHz      ; m_6_counter_manual:c_min1|c  ;                                                               ;
+; 275.1 MHz  ; 250.0 MHz       ; SW[9]                        ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 366.7 MHz  ; 366.7 MHz       ; m_6_counter_manual:c_sec1|c  ;                                                               ;
+; 823.05 MHz ; 416.15 MHz      ; m_10_counter_manual:c_sec0|c ; limit due to minimum period restriction (tmin)                ;
+; 828.5 MHz  ; 416.15 MHz      ; m_10_counter_manual:c_min0|c ; limit due to minimum period restriction (tmin)                ;
++------------+-----------------+------------------------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -138,12 +140,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; CLK1                         ; -4.484 ; -99.884       ;
-; m_6_counter_manual:c_min1|c  ; -3.275 ; -26.816       ;
-; m_6_counter_manual:c_sec1|c  ; -2.708 ; -10.824       ;
-; m_10_counter_manual:c_min0|c ; -2.423 ; -6.472        ;
-; m_10_counter_manual:c_sec0|c ; -2.071 ; -5.889        ;
-; m_prescale5M:u0|cnt[0]       ; -1.659 ; -34.486       ;
+; CLK1                         ; -4.288 ; -95.460       ;
+; m_6_counter_manual:c_sec1|c  ; -3.454 ; -17.233       ;
+; m_prescale5M:u0|cnt[0]       ; -3.308 ; -67.220       ;
+; m_6_counter_manual:c_min1|c  ; -3.186 ; -28.347       ;
+; m_10_counter_manual:c_sec0|c ; -3.140 ; -12.592       ;
+; m_10_counter_manual:c_min0|c ; -2.699 ; -10.796       ;
+; SW[9]                        ; -2.635 ; -11.577       ;
 +------------------------------+--------+---------------+
 
 
@@ -154,10 +157,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+-------+---------------+
 ; m_10_counter_manual:c_min0|c ; 0.347 ; 0.000         ;
 ; m_10_counter_manual:c_sec0|c ; 0.348 ; 0.000         ;
-; m_prescale5M:u0|cnt[0]       ; 0.348 ; 0.000         ;
+; SW[9]                        ; 0.363 ; 0.000         ;
 ; m_6_counter_manual:c_sec1|c  ; 0.363 ; 0.000         ;
+; m_prescale5M:u0|cnt[0]       ; 0.378 ; 0.000         ;
 ; CLK1                         ; 0.669 ; 0.000         ;
-; m_6_counter_manual:c_min1|c  ; 1.028 ; 0.000         ;
+; m_6_counter_manual:c_min1|c  ; 0.997 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
@@ -179,7 +183,8 @@ No paths to report.
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
 ; CLK1                         ; -3.000 ; -35.269       ;
-; m_prescale5M:u0|cnt[0]       ; -1.403 ; -53.314       ;
+; SW[9]                        ; -3.000 ; -15.627       ;
+; m_prescale5M:u0|cnt[0]       ; -1.403 ; -42.090       ;
 ; m_6_counter_manual:c_min1|c  ; -1.403 ; -15.433       ;
 ; m_6_counter_manual:c_sec1|c  ; -1.403 ; -12.627       ;
 ; m_10_counter_manual:c_min0|c ; -1.403 ; -9.821        ;
@@ -193,18 +198,19 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                                                            ;
-+------------+-----------------+------------------------------+------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name                   ; Note                                           ;
-+------------+-----------------+------------------------------+------------------------------------------------+
-; 195.81 MHz ; 195.81 MHz      ; CLK1                         ;                                                ;
-; 258.4 MHz  ; 258.4 MHz       ; m_6_counter_manual:c_min1|c  ;                                                ;
-; 405.68 MHz ; 405.68 MHz      ; m_prescale5M:u0|cnt[0]       ;                                                ;
-; 487.57 MHz ; 416.15 MHz      ; m_6_counter_manual:c_sec1|c  ; limit due to minimum period restriction (tmin) ;
-; 796.18 MHz ; 416.15 MHz      ; m_10_counter_manual:c_min0|c ; limit due to minimum period restriction (tmin) ;
-; 798.72 MHz ; 416.15 MHz      ; m_10_counter_manual:c_sec0|c ; limit due to minimum period restriction (tmin) ;
-+------------+-----------------+------------------------------+------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                                           ;
++------------+-----------------+------------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                   ; Note                                                          ;
++------------+-----------------+------------------------------+---------------------------------------------------------------+
+; 202.27 MHz ; 202.27 MHz      ; CLK1                         ;                                                               ;
+; 245.1 MHz  ; 245.1 MHz       ; m_prescale5M:u0|cnt[0]       ;                                                               ;
+; 263.3 MHz  ; 263.3 MHz       ; m_6_counter_manual:c_min1|c  ;                                                               ;
+; 300.03 MHz ; 250.0 MHz       ; SW[9]                        ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 406.83 MHz ; 406.83 MHz      ; m_6_counter_manual:c_sec1|c  ;                                                               ;
+; 900.9 MHz  ; 416.15 MHz      ; m_10_counter_manual:c_sec0|c ; limit due to minimum period restriction (tmin)                ;
+; 906.62 MHz ; 416.15 MHz      ; m_10_counter_manual:c_min0|c ; limit due to minimum period restriction (tmin)                ;
++------------+-----------------+------------------------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -213,12 +219,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; CLK1                         ; -4.107 ; -91.415       ;
-; m_6_counter_manual:c_min1|c  ; -2.870 ; -23.535       ;
-; m_6_counter_manual:c_sec1|c  ; -2.449 ; -9.742        ;
-; m_10_counter_manual:c_min0|c ; -2.172 ; -5.552        ;
-; m_10_counter_manual:c_sec0|c ; -1.837 ; -5.069        ;
-; m_prescale5M:u0|cnt[0]       ; -1.465 ; -29.035       ;
+; CLK1                         ; -3.944 ; -87.703       ;
+; m_6_counter_manual:c_sec1|c  ; -3.096 ; -15.253       ;
+; m_prescale5M:u0|cnt[0]       ; -3.080 ; -59.884       ;
+; m_10_counter_manual:c_sec0|c ; -2.822 ; -11.288       ;
+; m_6_counter_manual:c_min1|c  ; -2.798 ; -25.123       ;
+; m_10_counter_manual:c_min0|c ; -2.412 ; -9.648        ;
+; SW[9]                        ; -2.333 ; -10.391       ;
 +------------------------------+--------+---------------+
 
 
@@ -227,12 +234,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+-------+---------------+
 ; Clock                        ; Slack ; End Point TNS ;
 +------------------------------+-------+---------------+
-; m_10_counter_manual:c_min0|c ; 0.312 ; 0.000         ;
-; m_10_counter_manual:c_sec0|c ; 0.313 ; 0.000         ;
-; m_prescale5M:u0|cnt[0]       ; 0.313 ; 0.000         ;
-; m_6_counter_manual:c_sec1|c  ; 0.328 ; 0.000         ;
-; CLK1                         ; 0.616 ; 0.000         ;
-; m_6_counter_manual:c_min1|c  ; 0.933 ; 0.000         ;
+; m_10_counter_manual:c_sec0|c ; 0.312 ; 0.000         ;
+; m_10_counter_manual:c_min0|c ; 0.313 ; 0.000         ;
+; SW[9]                        ; 0.328 ; 0.000         ;
+; m_6_counter_manual:c_sec1|c  ; 0.329 ; 0.000         ;
+; m_prescale5M:u0|cnt[0]       ; 0.339 ; 0.000         ;
+; CLK1                         ; 0.612 ; 0.000         ;
+; m_6_counter_manual:c_min1|c  ; 0.920 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
@@ -254,7 +262,8 @@ No paths to report.
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
 ; CLK1                         ; -3.000 ; -35.269       ;
-; m_prescale5M:u0|cnt[0]       ; -1.403 ; -53.314       ;
+; SW[9]                        ; -3.000 ; -15.627       ;
+; m_prescale5M:u0|cnt[0]       ; -1.403 ; -42.090       ;
 ; m_6_counter_manual:c_min1|c  ; -1.403 ; -15.433       ;
 ; m_6_counter_manual:c_sec1|c  ; -1.403 ; -12.627       ;
 ; m_10_counter_manual:c_min0|c ; -1.403 ; -9.821        ;
@@ -273,12 +282,13 @@ No synchronizer chains to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; CLK1                         ; -1.456 ; -31.878       ;
-; m_6_counter_manual:c_min1|c  ; -0.673 ; -4.672        ;
-; m_6_counter_manual:c_sec1|c  ; -0.461 ; -1.840        ;
-; m_10_counter_manual:c_min0|c ; -0.330 ; -0.510        ;
-; m_10_counter_manual:c_sec0|c ; -0.215 ; -0.410        ;
-; m_prescale5M:u0|cnt[0]       ; -0.144 ; -0.337        ;
+; CLK1                         ; -1.333 ; -29.504       ;
+; m_prescale5M:u0|cnt[0]       ; -1.279 ; -33.032       ;
+; m_6_counter_manual:c_sec1|c  ; -0.734 ; -3.670        ;
+; m_10_counter_manual:c_sec0|c ; -0.694 ; -2.776        ;
+; m_6_counter_manual:c_min1|c  ; -0.683 ; -5.367        ;
+; SW[9]                        ; -0.539 ; -2.035        ;
+; m_10_counter_manual:c_min0|c ; -0.529 ; -2.116        ;
 +------------------------------+--------+---------------+
 
 
@@ -287,12 +297,13 @@ No synchronizer chains to report.
 +------------------------------+-------+---------------+
 ; Clock                        ; Slack ; End Point TNS ;
 +------------------------------+-------+---------------+
-; m_10_counter_manual:c_min0|c ; 0.152 ; 0.000         ;
 ; m_10_counter_manual:c_sec0|c ; 0.152 ; 0.000         ;
-; m_prescale5M:u0|cnt[0]       ; 0.153 ; 0.000         ;
+; m_10_counter_manual:c_min0|c ; 0.153 ; 0.000         ;
 ; m_6_counter_manual:c_sec1|c  ; 0.156 ; 0.000         ;
-; CLK1                         ; 0.261 ; 0.000         ;
-; m_6_counter_manual:c_min1|c  ; 0.406 ; 0.000         ;
+; SW[9]                        ; 0.157 ; 0.000         ;
+; m_prescale5M:u0|cnt[0]       ; 0.166 ; 0.000         ;
+; CLK1                         ; 0.262 ; 0.000         ;
+; m_6_counter_manual:c_min1|c  ; 0.367 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
@@ -314,7 +325,8 @@ No paths to report.
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
 ; CLK1                         ; -3.000 ; -30.767       ;
-; m_prescale5M:u0|cnt[0]       ; -1.000 ; -38.000       ;
+; SW[9]                        ; -3.000 ; -13.649       ;
+; m_prescale5M:u0|cnt[0]       ; -1.000 ; -30.015       ;
 ; m_6_counter_manual:c_min1|c  ; -1.000 ; -11.000       ;
 ; m_6_counter_manual:c_sec1|c  ; -1.000 ; -9.000        ;
 ; m_10_counter_manual:c_min0|c ; -1.000 ; -7.000        ;
@@ -333,20 +345,22 @@ No synchronizer chains to report.
 +-------------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                         ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +-------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack              ; -4.484   ; 0.152 ; N/A      ; N/A     ; -3.000              ;
-;  CLK1                         ; -4.484   ; 0.261 ; N/A      ; N/A     ; -3.000              ;
-;  m_10_counter_manual:c_min0|c ; -2.423   ; 0.152 ; N/A      ; N/A     ; -1.403              ;
-;  m_10_counter_manual:c_sec0|c ; -2.071   ; 0.152 ; N/A      ; N/A     ; -1.403              ;
-;  m_6_counter_manual:c_min1|c  ; -3.275   ; 0.406 ; N/A      ; N/A     ; -1.403              ;
-;  m_6_counter_manual:c_sec1|c  ; -2.708   ; 0.156 ; N/A      ; N/A     ; -1.403              ;
-;  m_prescale5M:u0|cnt[0]       ; -1.659   ; 0.153 ; N/A      ; N/A     ; -1.403              ;
-; Design-wide TNS               ; -184.371 ; 0.0   ; 0.0      ; 0.0     ; -136.285            ;
-;  CLK1                         ; -99.884  ; 0.000 ; N/A      ; N/A     ; -35.269             ;
-;  m_10_counter_manual:c_min0|c ; -6.472   ; 0.000 ; N/A      ; N/A     ; -9.821              ;
-;  m_10_counter_manual:c_sec0|c ; -5.889   ; 0.000 ; N/A      ; N/A     ; -9.821              ;
-;  m_6_counter_manual:c_min1|c  ; -26.816  ; 0.000 ; N/A      ; N/A     ; -15.433             ;
-;  m_6_counter_manual:c_sec1|c  ; -10.824  ; 0.000 ; N/A      ; N/A     ; -12.627             ;
-;  m_prescale5M:u0|cnt[0]       ; -34.486  ; 0.000 ; N/A      ; N/A     ; -53.314             ;
+; Worst-case Slack              ; -4.288   ; 0.152 ; N/A      ; N/A     ; -3.000              ;
+;  CLK1                         ; -4.288   ; 0.262 ; N/A      ; N/A     ; -3.000              ;
+;  SW[9]                        ; -2.635   ; 0.157 ; N/A      ; N/A     ; -3.000              ;
+;  m_10_counter_manual:c_min0|c ; -2.699   ; 0.153 ; N/A      ; N/A     ; -1.403              ;
+;  m_10_counter_manual:c_sec0|c ; -3.140   ; 0.152 ; N/A      ; N/A     ; -1.403              ;
+;  m_6_counter_manual:c_min1|c  ; -3.186   ; 0.367 ; N/A      ; N/A     ; -1.403              ;
+;  m_6_counter_manual:c_sec1|c  ; -3.454   ; 0.156 ; N/A      ; N/A     ; -1.403              ;
+;  m_prescale5M:u0|cnt[0]       ; -3.308   ; 0.166 ; N/A      ; N/A     ; -1.403              ;
+; Design-wide TNS               ; -243.225 ; 0.0   ; 0.0      ; 0.0     ; -140.688            ;
+;  CLK1                         ; -95.460  ; 0.000 ; N/A      ; N/A     ; -35.269             ;
+;  SW[9]                        ; -11.577  ; 0.000 ; N/A      ; N/A     ; -15.627             ;
+;  m_10_counter_manual:c_min0|c ; -10.796  ; 0.000 ; N/A      ; N/A     ; -9.821              ;
+;  m_10_counter_manual:c_sec0|c ; -12.592  ; 0.000 ; N/A      ; N/A     ; -9.821              ;
+;  m_6_counter_manual:c_min1|c  ; -28.347  ; 0.000 ; N/A      ; N/A     ; -15.433             ;
+;  m_6_counter_manual:c_sec1|c  ; -17.233  ; 0.000 ; N/A      ; N/A     ; -12.627             ;
+;  m_prescale5M:u0|cnt[0]       ; -67.220  ; 0.000 ; N/A      ; N/A     ; -42.090             ;
 +-------------------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -654,15 +668,18 @@ No synchronizer chains to report.
 +------------------------------+------------------------------+----------+----------+----------+----------+
 ; CLK1                         ; CLK1                         ; 759      ; 0        ; 0        ; 0        ;
 ; m_prescale5M:u0|cnt[0]       ; CLK1                         ; 46       ; 46       ; 0        ; 0        ;
-; m_6_counter_manual:c_min1|c  ; m_6_counter_manual:c_min1|c  ; 255      ; 0        ; 0        ; 0        ;
-; m_prescale5M:u0|cnt[0]       ; m_6_counter_manual:c_min1|c  ; 7        ; 0        ; 0        ; 0        ;
-; m_6_counter_manual:c_sec1|c  ; m_6_counter_manual:c_sec1|c  ; 30       ; 0        ; 0        ; 0        ;
-; m_prescale5M:u0|cnt[0]       ; m_6_counter_manual:c_sec1|c  ; 12       ; 0        ; 0        ; 0        ;
+; m_6_counter_manual:c_min1|c  ; m_6_counter_manual:c_min1|c  ; 256      ; 0        ; 0        ; 0        ;
+; m_prescale5M:u0|cnt[0]       ; m_6_counter_manual:c_min1|c  ; 18       ; 0        ; 0        ; 0        ;
+; m_6_counter_manual:c_sec1|c  ; m_6_counter_manual:c_sec1|c  ; 33       ; 0        ; 0        ; 0        ;
+; m_prescale5M:u0|cnt[0]       ; m_6_counter_manual:c_sec1|c  ; 21       ; 0        ; 0        ; 0        ;
 ; m_10_counter_manual:c_min0|c ; m_10_counter_manual:c_min0|c ; 13       ; 0        ; 0        ; 0        ;
-; m_prescale5M:u0|cnt[0]       ; m_10_counter_manual:c_min0|c ; 4        ; 0        ; 0        ; 0        ;
+; m_prescale5M:u0|cnt[0]       ; m_10_counter_manual:c_min0|c ; 11       ; 0        ; 0        ; 0        ;
 ; m_10_counter_manual:c_sec0|c ; m_10_counter_manual:c_sec0|c ; 13       ; 0        ; 0        ; 0        ;
-; m_prescale5M:u0|cnt[0]       ; m_10_counter_manual:c_sec0|c ; 4        ; 0        ; 0        ; 0        ;
-; m_prescale5M:u0|cnt[0]       ; m_prescale5M:u0|cnt[0]       ; 208      ; 0        ; 0        ; 0        ;
+; m_prescale5M:u0|cnt[0]       ; m_10_counter_manual:c_sec0|c ; 11       ; 0        ; 0        ; 0        ;
+; m_prescale5M:u0|cnt[0]       ; m_prescale5M:u0|cnt[0]       ; 172      ; 0        ; 0        ; 0        ;
+; SW[9]                        ; m_prescale5M:u0|cnt[0]       ; 34       ; 34       ; 0        ; 0        ;
+; m_prescale5M:u0|cnt[0]       ; SW[9]                        ; 0        ; 0        ; 21       ; 0        ;
+; SW[9]                        ; SW[9]                        ; 0        ; 0        ; 0        ; 33       ;
 +------------------------------+------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -674,15 +691,18 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------------------------+------------------------------+----------+----------+----------+----------+
 ; CLK1                         ; CLK1                         ; 759      ; 0        ; 0        ; 0        ;
 ; m_prescale5M:u0|cnt[0]       ; CLK1                         ; 46       ; 46       ; 0        ; 0        ;
-; m_6_counter_manual:c_min1|c  ; m_6_counter_manual:c_min1|c  ; 255      ; 0        ; 0        ; 0        ;
-; m_prescale5M:u0|cnt[0]       ; m_6_counter_manual:c_min1|c  ; 7        ; 0        ; 0        ; 0        ;
-; m_6_counter_manual:c_sec1|c  ; m_6_counter_manual:c_sec1|c  ; 30       ; 0        ; 0        ; 0        ;
-; m_prescale5M:u0|cnt[0]       ; m_6_counter_manual:c_sec1|c  ; 12       ; 0        ; 0        ; 0        ;
+; m_6_counter_manual:c_min1|c  ; m_6_counter_manual:c_min1|c  ; 256      ; 0        ; 0        ; 0        ;
+; m_prescale5M:u0|cnt[0]       ; m_6_counter_manual:c_min1|c  ; 18       ; 0        ; 0        ; 0        ;
+; m_6_counter_manual:c_sec1|c  ; m_6_counter_manual:c_sec1|c  ; 33       ; 0        ; 0        ; 0        ;
+; m_prescale5M:u0|cnt[0]       ; m_6_counter_manual:c_sec1|c  ; 21       ; 0        ; 0        ; 0        ;
 ; m_10_counter_manual:c_min0|c ; m_10_counter_manual:c_min0|c ; 13       ; 0        ; 0        ; 0        ;
-; m_prescale5M:u0|cnt[0]       ; m_10_counter_manual:c_min0|c ; 4        ; 0        ; 0        ; 0        ;
+; m_prescale5M:u0|cnt[0]       ; m_10_counter_manual:c_min0|c ; 11       ; 0        ; 0        ; 0        ;
 ; m_10_counter_manual:c_sec0|c ; m_10_counter_manual:c_sec0|c ; 13       ; 0        ; 0        ; 0        ;
-; m_prescale5M:u0|cnt[0]       ; m_10_counter_manual:c_sec0|c ; 4        ; 0        ; 0        ; 0        ;
-; m_prescale5M:u0|cnt[0]       ; m_prescale5M:u0|cnt[0]       ; 208      ; 0        ; 0        ; 0        ;
+; m_prescale5M:u0|cnt[0]       ; m_10_counter_manual:c_sec0|c ; 11       ; 0        ; 0        ; 0        ;
+; m_prescale5M:u0|cnt[0]       ; m_prescale5M:u0|cnt[0]       ; 172      ; 0        ; 0        ; 0        ;
+; SW[9]                        ; m_prescale5M:u0|cnt[0]       ; 34       ; 34       ; 0        ; 0        ;
+; m_prescale5M:u0|cnt[0]       ; SW[9]                        ; 0        ; 0        ; 21       ; 0        ;
+; SW[9]                        ; SW[9]                        ; 0        ; 0        ; 0        ; 33       ;
 +------------------------------+------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -706,8 +726,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 7     ; 7    ;
-; Unconstrained Input Port Paths  ; 75    ; 75   ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 44    ; 44   ;
 ; Unconstrained Output Ports      ; 51    ; 51   ;
 ; Unconstrained Output Port Paths ; 146   ; 146  ;
 +---------------------------------+-------+------+
@@ -719,6 +739,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Target                       ; Clock                        ; Type ; Status      ;
 +------------------------------+------------------------------+------+-------------+
 ; CLK1                         ; CLK1                         ; Base ; Constrained ;
+; SW[9]                        ; SW[9]                        ; Base ; Constrained ;
 ; m_6_counter_manual:c_min1|c  ; m_6_counter_manual:c_min1|c  ; Base ; Constrained ;
 ; m_6_counter_manual:c_sec1|c  ; m_6_counter_manual:c_sec1|c  ; Base ; Constrained ;
 ; m_10_counter_manual:c_min0|c ; m_10_counter_manual:c_min0|c ; Base ; Constrained ;
@@ -738,7 +759,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; SW[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; SW[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; SW[8]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SW[9]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
 
 
@@ -812,7 +832,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; SW[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; SW[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; SW[8]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SW[9]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
 
 
@@ -881,7 +900,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Thu Nov 20 09:29:59 2025
+    Info: Processing started: Thu Dec  4 10:11:21 2025
 Info: Command: quartus_sta L11_Timer -c TopModule
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -897,37 +916,41 @@ Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name m_10_counter_manual:c_min0|c m_10_counter_manual:c_min0|c
     Info (332105): create_clock -period 1.000 -name m_6_counter_manual:c_sec1|c m_6_counter_manual:c_sec1|c
     Info (332105): create_clock -period 1.000 -name m_10_counter_manual:c_sec0|c m_10_counter_manual:c_sec0|c
+    Info (332105): create_clock -period 1.000 -name SW[9] SW[9]
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -4.484
+Info (332146): Worst-case setup slack is -4.288
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.484             -99.884 CLK1 
-    Info (332119):    -3.275             -26.816 m_6_counter_manual:c_min1|c 
-    Info (332119):    -2.708             -10.824 m_6_counter_manual:c_sec1|c 
-    Info (332119):    -2.423              -6.472 m_10_counter_manual:c_min0|c 
-    Info (332119):    -2.071              -5.889 m_10_counter_manual:c_sec0|c 
-    Info (332119):    -1.659             -34.486 m_prescale5M:u0|cnt[0] 
+    Info (332119):    -4.288             -95.460 CLK1 
+    Info (332119):    -3.454             -17.233 m_6_counter_manual:c_sec1|c 
+    Info (332119):    -3.308             -67.220 m_prescale5M:u0|cnt[0] 
+    Info (332119):    -3.186             -28.347 m_6_counter_manual:c_min1|c 
+    Info (332119):    -3.140             -12.592 m_10_counter_manual:c_sec0|c 
+    Info (332119):    -2.699             -10.796 m_10_counter_manual:c_min0|c 
+    Info (332119):    -2.635             -11.577 SW[9] 
 Info (332146): Worst-case hold slack is 0.347
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.347               0.000 m_10_counter_manual:c_min0|c 
     Info (332119):     0.348               0.000 m_10_counter_manual:c_sec0|c 
-    Info (332119):     0.348               0.000 m_prescale5M:u0|cnt[0] 
+    Info (332119):     0.363               0.000 SW[9] 
     Info (332119):     0.363               0.000 m_6_counter_manual:c_sec1|c 
+    Info (332119):     0.378               0.000 m_prescale5M:u0|cnt[0] 
     Info (332119):     0.669               0.000 CLK1 
-    Info (332119):     1.028               0.000 m_6_counter_manual:c_min1|c 
+    Info (332119):     0.997               0.000 m_6_counter_manual:c_min1|c 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -35.269 CLK1 
-    Info (332119):    -1.403             -53.314 m_prescale5M:u0|cnt[0] 
+    Info (332119):    -3.000             -15.627 SW[9] 
+    Info (332119):    -1.403             -42.090 m_prescale5M:u0|cnt[0] 
     Info (332119):    -1.403             -15.433 m_6_counter_manual:c_min1|c 
     Info (332119):    -1.403             -12.627 m_6_counter_manual:c_sec1|c 
     Info (332119):    -1.403              -9.821 m_10_counter_manual:c_min0|c 
@@ -937,31 +960,34 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -4.107
+Info (332146): Worst-case setup slack is -3.944
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.107             -91.415 CLK1 
-    Info (332119):    -2.870             -23.535 m_6_counter_manual:c_min1|c 
-    Info (332119):    -2.449              -9.742 m_6_counter_manual:c_sec1|c 
-    Info (332119):    -2.172              -5.552 m_10_counter_manual:c_min0|c 
-    Info (332119):    -1.837              -5.069 m_10_counter_manual:c_sec0|c 
-    Info (332119):    -1.465             -29.035 m_prescale5M:u0|cnt[0] 
+    Info (332119):    -3.944             -87.703 CLK1 
+    Info (332119):    -3.096             -15.253 m_6_counter_manual:c_sec1|c 
+    Info (332119):    -3.080             -59.884 m_prescale5M:u0|cnt[0] 
+    Info (332119):    -2.822             -11.288 m_10_counter_manual:c_sec0|c 
+    Info (332119):    -2.798             -25.123 m_6_counter_manual:c_min1|c 
+    Info (332119):    -2.412              -9.648 m_10_counter_manual:c_min0|c 
+    Info (332119):    -2.333             -10.391 SW[9] 
 Info (332146): Worst-case hold slack is 0.312
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.312               0.000 m_10_counter_manual:c_min0|c 
-    Info (332119):     0.313               0.000 m_10_counter_manual:c_sec0|c 
-    Info (332119):     0.313               0.000 m_prescale5M:u0|cnt[0] 
-    Info (332119):     0.328               0.000 m_6_counter_manual:c_sec1|c 
-    Info (332119):     0.616               0.000 CLK1 
-    Info (332119):     0.933               0.000 m_6_counter_manual:c_min1|c 
+    Info (332119):     0.312               0.000 m_10_counter_manual:c_sec0|c 
+    Info (332119):     0.313               0.000 m_10_counter_manual:c_min0|c 
+    Info (332119):     0.328               0.000 SW[9] 
+    Info (332119):     0.329               0.000 m_6_counter_manual:c_sec1|c 
+    Info (332119):     0.339               0.000 m_prescale5M:u0|cnt[0] 
+    Info (332119):     0.612               0.000 CLK1 
+    Info (332119):     0.920               0.000 m_6_counter_manual:c_min1|c 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -35.269 CLK1 
-    Info (332119):    -1.403             -53.314 m_prescale5M:u0|cnt[0] 
+    Info (332119):    -3.000             -15.627 SW[9] 
+    Info (332119):    -1.403             -42.090 m_prescale5M:u0|cnt[0] 
     Info (332119):    -1.403             -15.433 m_6_counter_manual:c_min1|c 
     Info (332119):    -1.403             -12.627 m_6_counter_manual:c_sec1|c 
     Info (332119):    -1.403              -9.821 m_10_counter_manual:c_min0|c 
@@ -969,31 +995,34 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.456
+Info (332146): Worst-case setup slack is -1.333
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.456             -31.878 CLK1 
-    Info (332119):    -0.673              -4.672 m_6_counter_manual:c_min1|c 
-    Info (332119):    -0.461              -1.840 m_6_counter_manual:c_sec1|c 
-    Info (332119):    -0.330              -0.510 m_10_counter_manual:c_min0|c 
-    Info (332119):    -0.215              -0.410 m_10_counter_manual:c_sec0|c 
-    Info (332119):    -0.144              -0.337 m_prescale5M:u0|cnt[0] 
+    Info (332119):    -1.333             -29.504 CLK1 
+    Info (332119):    -1.279             -33.032 m_prescale5M:u0|cnt[0] 
+    Info (332119):    -0.734              -3.670 m_6_counter_manual:c_sec1|c 
+    Info (332119):    -0.694              -2.776 m_10_counter_manual:c_sec0|c 
+    Info (332119):    -0.683              -5.367 m_6_counter_manual:c_min1|c 
+    Info (332119):    -0.539              -2.035 SW[9] 
+    Info (332119):    -0.529              -2.116 m_10_counter_manual:c_min0|c 
 Info (332146): Worst-case hold slack is 0.152
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.152               0.000 m_10_counter_manual:c_min0|c 
     Info (332119):     0.152               0.000 m_10_counter_manual:c_sec0|c 
-    Info (332119):     0.153               0.000 m_prescale5M:u0|cnt[0] 
+    Info (332119):     0.153               0.000 m_10_counter_manual:c_min0|c 
     Info (332119):     0.156               0.000 m_6_counter_manual:c_sec1|c 
-    Info (332119):     0.261               0.000 CLK1 
-    Info (332119):     0.406               0.000 m_6_counter_manual:c_min1|c 
+    Info (332119):     0.157               0.000 SW[9] 
+    Info (332119):     0.166               0.000 m_prescale5M:u0|cnt[0] 
+    Info (332119):     0.262               0.000 CLK1 
+    Info (332119):     0.367               0.000 m_6_counter_manual:c_min1|c 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -30.767 CLK1 
-    Info (332119):    -1.000             -38.000 m_prescale5M:u0|cnt[0] 
+    Info (332119):    -3.000             -13.649 SW[9] 
+    Info (332119):    -1.000             -30.015 m_prescale5M:u0|cnt[0] 
     Info (332119):    -1.000             -11.000 m_6_counter_manual:c_min1|c 
     Info (332119):    -1.000              -9.000 m_6_counter_manual:c_sec1|c 
     Info (332119):    -1.000              -7.000 m_10_counter_manual:c_min0|c 
@@ -1001,9 +1030,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 647 megabytes
-    Info: Processing ended: Thu Nov 20 09:30:01 2025
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 651 megabytes
+    Info: Processing ended: Thu Dec  4 10:11:22 2025
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:02
 
 

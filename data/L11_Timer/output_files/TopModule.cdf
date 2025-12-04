@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("/home/kazu/school/HDL/data/L11_Timer/output_files/") File("TopModule.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("/home/kazu/school/HDL/report/data/L11_Timer/output_files/") File("TopModule.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
