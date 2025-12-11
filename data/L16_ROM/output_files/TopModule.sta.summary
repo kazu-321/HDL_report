@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLK1'
+Slack : -4.705
+TNS   : -120.734
+
+Type  : Slow 1200mV 85C Model Setup 'm_prescale50M:tim|cnt[0]'
+Slack : -0.166
+TNS   : -0.166
+
+Type  : Slow 1200mV 85C Model Hold 'm_prescale50M:tim|cnt[0]'
+Slack : 0.348
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLK1'
+Slack : 0.674
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK1'
+Slack : -3.000
+TNS   : -39.478
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'm_prescale50M:tim|cnt[0]'
+Slack : -1.403
+TNS   : -4.209
+
+Type  : Slow 1200mV 0C Model Setup 'CLK1'
+Slack : -4.315
+TNS   : -110.595
+
+Type  : Slow 1200mV 0C Model Setup 'm_prescale50M:tim|cnt[0]'
+Slack : -0.067
+TNS   : -0.067
+
+Type  : Slow 1200mV 0C Model Hold 'm_prescale50M:tim|cnt[0]'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLK1'
+Slack : 0.585
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK1'
+Slack : -3.000
+TNS   : -39.478
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'm_prescale50M:tim|cnt[0]'
+Slack : -1.403
+TNS   : -4.209
+
+Type  : Fast 1200mV 0C Model Setup 'CLK1'
+Slack : -1.594
+TNS   : -40.579
+
+Type  : Fast 1200mV 0C Model Setup 'm_prescale50M:tim|cnt[0]'
+Slack : 0.501
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'm_prescale50M:tim|cnt[0]'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLK1'
+Slack : 0.262
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK1'
+Slack : -3.000
+TNS   : -34.560
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'm_prescale50M:tim|cnt[0]'
+Slack : -1.000
+TNS   : -3.000
+
+------------------------------------------------------------
