@@ -1,0 +1,178 @@
+|TopModule
+CLK1 => CLK1.IN1
+CLK2 => ~NO_FANOUT~
+HEX0[0] <= m_seven_segment:s0.port1
+HEX0[1] <= m_seven_segment:s0.port1
+HEX0[2] <= m_seven_segment:s0.port1
+HEX0[3] <= m_seven_segment:s0.port1
+HEX0[4] <= m_seven_segment:s0.port1
+HEX0[5] <= m_seven_segment:s0.port1
+HEX0[6] <= m_seven_segment:s0.port1
+HEX0[7] <= m_seven_segment:s0.port1
+HEX1[0] <= m_seven_segment:s1.port1
+HEX1[1] <= m_seven_segment:s1.port1
+HEX1[2] <= m_seven_segment:s1.port1
+HEX1[3] <= m_seven_segment:s1.port1
+HEX1[4] <= m_seven_segment:s1.port1
+HEX1[5] <= m_seven_segment:s1.port1
+HEX1[6] <= m_seven_segment:s1.port1
+HEX1[7] <= m_seven_segment:s1.port1
+HEX2[0] <= m_seven_segment:s2.port1
+HEX2[1] <= m_seven_segment:s2.port1
+HEX2[2] <= m_seven_segment:s2.port1
+HEX2[3] <= m_seven_segment:s2.port1
+HEX2[4] <= m_seven_segment:s2.port1
+HEX2[5] <= m_seven_segment:s2.port1
+HEX2[6] <= m_seven_segment:s2.port1
+HEX2[7] <= m_seven_segment:s2.port1
+HEX3[0] <= <VCC>
+HEX3[1] <= <VCC>
+HEX3[2] <= <VCC>
+HEX3[3] <= <VCC>
+HEX3[4] <= <VCC>
+HEX3[5] <= <VCC>
+HEX3[6] <= <VCC>
+HEX3[7] <= <VCC>
+HEX4[0] <= <VCC>
+HEX4[1] <= <VCC>
+HEX4[2] <= <VCC>
+HEX4[3] <= <VCC>
+HEX4[4] <= <VCC>
+HEX4[5] <= <VCC>
+HEX4[6] <= <VCC>
+HEX4[7] <= <VCC>
+HEX5[0] <= <VCC>
+HEX5[1] <= <VCC>
+HEX5[2] <= <VCC>
+HEX5[3] <= <VCC>
+HEX5[4] <= <VCC>
+HEX5[5] <= <VCC>
+HEX5[6] <= <VCC>
+HEX5[7] <= <VCC>
+BTN[0] => BTN[0].IN1
+BTN[1] => ~NO_FANOUT~
+LED[0] <= <GND>
+LED[1] <= <GND>
+LED[2] <= <GND>
+LED[3] <= <GND>
+LED[4] <= <GND>
+LED[5] <= <GND>
+LED[6] <= <GND>
+LED[7] <= <GND>
+LED[8] <= <GND>
+LED[9] <= <GND>
+SW[0] => SW[0].IN2
+SW[1] => SW[1].IN2
+SW[2] => SW[2].IN2
+SW[3] => SW[3].IN2
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => SW[6].IN2
+SW[7] => SW[7].IN2
+SW[8] => SW[8].IN2
+SW[9] => SW[9].IN2
+
+
+|TopModule|m_chattering:u0
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+clk => cnt[6].CLK
+clk => cnt[7].CLK
+clk => cnt[8].CLK
+clk => cnt[9].CLK
+clk => cnt[10].CLK
+clk => cnt[11].CLK
+clk => cnt[12].CLK
+clk => cnt[13].CLK
+clk => cnt[14].CLK
+clk => cnt[15].CLK
+sw_in => swreg.DATAIN
+sw_out <= swreg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopModule|m_ram:u1
+adr[0] => mem.waddr_a[0].DATAIN
+adr[0] => mem.WADDR
+adr[0] => mem.RADDR
+adr[1] => mem.waddr_a[1].DATAIN
+adr[1] => mem.WADDR1
+adr[1] => mem.RADDR1
+adr[2] => mem.waddr_a[2].DATAIN
+adr[2] => mem.WADDR2
+adr[2] => mem.RADDR2
+adr[3] => mem.waddr_a[3].DATAIN
+adr[3] => mem.WADDR3
+adr[3] => mem.RADDR3
+wdata[0] => mem.data_a[0].DATAIN
+wdata[0] => mem.DATAIN
+wdata[1] => mem.data_a[1].DATAIN
+wdata[1] => mem.DATAIN1
+wdata[2] => mem.data_a[2].DATAIN
+wdata[2] => mem.DATAIN2
+wdata[3] => mem.data_a[3].DATAIN
+wdata[3] => mem.DATAIN3
+we => mem.we_a.CLK
+we => mem.waddr_a[3].CLK
+we => mem.waddr_a[2].CLK
+we => mem.waddr_a[1].CLK
+we => mem.waddr_a[0].CLK
+we => mem.data_a[3].CLK
+we => mem.data_a[2].CLK
+we => mem.data_a[1].CLK
+we => mem.data_a[0].CLK
+we => mem.CLK0
+rdata[0] <= mem.DATAOUT
+rdata[1] <= mem.DATAOUT1
+rdata[2] <= mem.DATAOUT2
+rdata[3] <= mem.DATAOUT3
+
+
+|TopModule|m_seven_segment:s0
+idat[0] => Decoder0.IN3
+idat[1] => Decoder0.IN2
+idat[2] => Decoder0.IN1
+idat[3] => Decoder0.IN0
+odat[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+odat[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+odat[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+odat[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+odat[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+odat[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+odat[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+odat[7] <= <VCC>
+
+
+|TopModule|m_seven_segment:s1
+idat[0] => Decoder0.IN3
+idat[1] => Decoder0.IN2
+idat[2] => Decoder0.IN1
+idat[3] => Decoder0.IN0
+odat[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+odat[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+odat[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+odat[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+odat[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+odat[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+odat[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+odat[7] <= <VCC>
+
+
+|TopModule|m_seven_segment:s2
+idat[0] => Decoder0.IN3
+idat[1] => Decoder0.IN2
+idat[2] => Decoder0.IN1
+idat[3] => Decoder0.IN0
+odat[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+odat[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+odat[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+odat[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+odat[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+odat[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+odat[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+odat[7] <= <VCC>
+
+
