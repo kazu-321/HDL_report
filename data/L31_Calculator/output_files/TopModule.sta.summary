@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'm_prescale:comb_3|cnt[0]'
+Slack : -5.331
+TNS   : -122.350
+
+Type  : Slow 1200mV 85C Model Setup 'CLK1'
+Slack : -4.364
+TNS   : -84.063
+
+Type  : Slow 1200mV 85C Model Hold 'm_prescale:comb_3|cnt[0]'
+Slack : 0.322
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLK1'
+Slack : 0.449
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK1'
+Slack : -3.000
+TNS   : -31.060
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'm_prescale:comb_3|cnt[0]'
+Slack : -1.403
+TNS   : -68.747
+
+Type  : Slow 1200mV 0C Model Setup 'm_prescale:comb_3|cnt[0]'
+Slack : -4.854
+TNS   : -109.388
+
+Type  : Slow 1200mV 0C Model Setup 'CLK1'
+Slack : -4.023
+TNS   : -77.283
+
+Type  : Slow 1200mV 0C Model Hold 'm_prescale:comb_3|cnt[0]'
+Slack : 0.289
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLK1'
+Slack : 0.411
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK1'
+Slack : -3.000
+TNS   : -31.060
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'm_prescale:comb_3|cnt[0]'
+Slack : -1.403
+TNS   : -68.747
+
+Type  : Fast 1200mV 0C Model Setup 'm_prescale:comb_3|cnt[0]'
+Slack : -1.607
+TNS   : -25.449
+
+Type  : Fast 1200mV 0C Model Setup 'CLK1'
+Slack : -1.362
+TNS   : -26.499
+
+Type  : Fast 1200mV 0C Model Hold 'm_prescale:comb_3|cnt[0]'
+Slack : 0.140
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLK1'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK1'
+Slack : -3.000
+TNS   : -27.100
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'm_prescale:comb_3|cnt[0]'
+Slack : -1.000
+TNS   : -49.000
+
+------------------------------------------------------------
