@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at TopModule.v(49): always construct contains both blocking and non-blocking assignments File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 49

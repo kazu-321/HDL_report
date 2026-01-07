@@ -1,5 +1,5 @@
 Timing Analyzer report for TopModule
-Thu Dec 25 09:10:43 2025
+Thu Dec 25 10:13:15 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -92,57 +92,57 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.12        ;
+; Average used               ; 2.33        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.9%      ;
-;     Processor 3            ;   0.9%      ;
-;     Processor 4            ;   0.9%      ;
-;     Processors 5-16        ;   0.8%      ;
+;     Processor 2            ;   9.1%      ;
+;     Processor 3            ;   9.0%      ;
+;     Processor 4            ;   9.0%      ;
+;     Processors 5-16        ;   8.9%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                                                             ;
-+--------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------+
-; Clock Name               ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                      ;
-+--------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------+
-; CLK1                     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK1 }                     ;
-; m_prescale:comb_3|cnt[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { m_prescale:comb_3|cnt[0] } ;
-+--------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                     ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+; Clock Name           ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                  ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+; CLK1                 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK1 }                 ;
+; m_prescale:u0|cnt[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { m_prescale:u0|cnt[0] } ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
 
 
-+----------------------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary                             ;
-+------------+-----------------+--------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name               ; Note ;
-+------------+-----------------+--------------------------+------+
-; 157.95 MHz ; 157.95 MHz      ; m_prescale:comb_3|cnt[0] ;      ;
-; 186.43 MHz ; 186.43 MHz      ; CLK1                     ;      ;
-+------------+-----------------+--------------------------+------+
++------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                         ;
++------------+-----------------+----------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name           ; Note ;
++------------+-----------------+----------------------+------+
+; 161.13 MHz ; 161.13 MHz      ; m_prescale:u0|cnt[0] ;      ;
+; 174.95 MHz ; 174.95 MHz      ; CLK1                 ;      ;
++------------+-----------------+----------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+---------------------------------------------------+
-; Slow 1200mV 85C Model Setup Summary               ;
-+--------------------------+--------+---------------+
-; Clock                    ; Slack  ; End Point TNS ;
-+--------------------------+--------+---------------+
-; m_prescale:comb_3|cnt[0] ; -5.331 ; -122.350      ;
-; CLK1                     ; -4.364 ; -84.063       ;
-+--------------------------+--------+---------------+
++-----------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary           ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; m_prescale:u0|cnt[0] ; -5.206 ; -409.625      ;
+; CLK1                 ; -4.716 ; -94.193       ;
++----------------------+--------+---------------+
 
 
-+--------------------------------------------------+
-; Slow 1200mV 85C Model Hold Summary               ;
-+--------------------------+-------+---------------+
-; Clock                    ; Slack ; End Point TNS ;
-+--------------------------+-------+---------------+
-; m_prescale:comb_3|cnt[0] ; 0.322 ; 0.000         ;
-; CLK1                     ; 0.449 ; 0.000         ;
-+--------------------------+-------+---------------+
++----------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary           ;
++----------------------+-------+---------------+
+; Clock                ; Slack ; End Point TNS ;
++----------------------+-------+---------------+
+; m_prescale:u0|cnt[0] ; 0.322 ; 0.000         ;
+; CLK1                 ; 0.668 ; 0.000         ;
++----------------------+-------+---------------+
 
 
 ------------------------------------------
@@ -159,12 +159,12 @@ No paths to report.
 
 +---------------------------------------------------+
 ; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
-+--------------------------+--------+---------------+
-; Clock                    ; Slack  ; End Point TNS ;
-+--------------------------+--------+---------------+
-; CLK1                     ; -3.000 ; -31.060       ;
-; m_prescale:comb_3|cnt[0] ; -1.403 ; -68.747       ;
-+--------------------------+--------+---------------+
++----------------------+--------+-------------------+
+; Clock                ; Slack  ; End Point TNS     ;
++----------------------+--------+-------------------+
+; CLK1                 ; -3.000 ; -31.060           ;
+; m_prescale:u0|cnt[0] ; -1.403 ; -179.584          ;
++----------------------+--------+-------------------+
 
 
 -----------------------------------------------
@@ -174,35 +174,35 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 
 
 
-+----------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                              ;
-+------------+-----------------+--------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name               ; Note ;
-+------------+-----------------+--------------------------+------+
-; 170.82 MHz ; 170.82 MHz      ; m_prescale:comb_3|cnt[0] ;      ;
-; 199.08 MHz ; 199.08 MHz      ; CLK1                     ;      ;
-+------------+-----------------+--------------------------+------+
++------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                          ;
++------------+-----------------+----------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name           ; Note ;
++------------+-----------------+----------------------+------+
+; 176.52 MHz ; 176.52 MHz      ; m_prescale:u0|cnt[0] ;      ;
+; 189.04 MHz ; 189.04 MHz      ; CLK1                 ;      ;
++------------+-----------------+----------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+---------------------------------------------------+
-; Slow 1200mV 0C Model Setup Summary                ;
-+--------------------------+--------+---------------+
-; Clock                    ; Slack  ; End Point TNS ;
-+--------------------------+--------+---------------+
-; m_prescale:comb_3|cnt[0] ; -4.854 ; -109.388      ;
-; CLK1                     ; -4.023 ; -77.283       ;
-+--------------------------+--------+---------------+
++-----------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary            ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; m_prescale:u0|cnt[0] ; -4.665 ; -363.931      ;
+; CLK1                 ; -4.290 ; -85.654       ;
++----------------------+--------+---------------+
 
 
-+--------------------------------------------------+
-; Slow 1200mV 0C Model Hold Summary                ;
-+--------------------------+-------+---------------+
-; Clock                    ; Slack ; End Point TNS ;
-+--------------------------+-------+---------------+
-; m_prescale:comb_3|cnt[0] ; 0.289 ; 0.000         ;
-; CLK1                     ; 0.411 ; 0.000         ;
-+--------------------------+-------+---------------+
++----------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary            ;
++----------------------+-------+---------------+
+; Clock                ; Slack ; End Point TNS ;
++----------------------+-------+---------------+
+; m_prescale:u0|cnt[0] ; 0.289 ; 0.000         ;
+; CLK1                 ; 0.616 ; 0.000         ;
++----------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -217,14 +217,14 @@ No paths to report.
 No paths to report.
 
 
-+---------------------------------------------------+
-; Slow 1200mV 0C Model Minimum Pulse Width Summary  ;
-+--------------------------+--------+---------------+
-; Clock                    ; Slack  ; End Point TNS ;
-+--------------------------+--------+---------------+
-; CLK1                     ; -3.000 ; -31.060       ;
-; m_prescale:comb_3|cnt[0] ; -1.403 ; -68.747       ;
-+--------------------------+--------+---------------+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++----------------------+--------+------------------+
+; Clock                ; Slack  ; End Point TNS    ;
++----------------------+--------+------------------+
+; CLK1                 ; -3.000 ; -31.060          ;
+; m_prescale:u0|cnt[0] ; -1.403 ; -179.584         ;
++----------------------+--------+------------------+
 
 
 ----------------------------------------------
@@ -234,24 +234,24 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 
 
 
-+---------------------------------------------------+
-; Fast 1200mV 0C Model Setup Summary                ;
-+--------------------------+--------+---------------+
-; Clock                    ; Slack  ; End Point TNS ;
-+--------------------------+--------+---------------+
-; m_prescale:comb_3|cnt[0] ; -1.607 ; -25.449       ;
-; CLK1                     ; -1.362 ; -26.499       ;
-+--------------------------+--------+---------------+
++-----------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary            ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; m_prescale:u0|cnt[0] ; -1.654 ; -101.113      ;
+; CLK1                 ; -1.500 ; -29.620       ;
++----------------------+--------+---------------+
 
 
-+--------------------------------------------------+
-; Fast 1200mV 0C Model Hold Summary                ;
-+--------------------------+-------+---------------+
-; Clock                    ; Slack ; End Point TNS ;
-+--------------------------+-------+---------------+
-; m_prescale:comb_3|cnt[0] ; 0.140 ; 0.000         ;
-; CLK1                     ; 0.181 ; 0.000         ;
-+--------------------------+-------+---------------+
++----------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary            ;
++----------------------+-------+---------------+
+; Clock                ; Slack ; End Point TNS ;
++----------------------+-------+---------------+
+; m_prescale:u0|cnt[0] ; 0.140 ; 0.000         ;
+; CLK1                 ; 0.261 ; 0.000         ;
++----------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -266,14 +266,14 @@ No paths to report.
 No paths to report.
 
 
-+---------------------------------------------------+
-; Fast 1200mV 0C Model Minimum Pulse Width Summary  ;
-+--------------------------+--------+---------------+
-; Clock                    ; Slack  ; End Point TNS ;
-+--------------------------+--------+---------------+
-; CLK1                     ; -3.000 ; -27.100       ;
-; m_prescale:comb_3|cnt[0] ; -1.000 ; -49.000       ;
-+--------------------------+--------+---------------+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++----------------------+--------+------------------+
+; Clock                ; Slack  ; End Point TNS    ;
++----------------------+--------+------------------+
+; CLK1                 ; -3.000 ; -27.196          ;
+; m_prescale:u0|cnt[0] ; -1.000 ; -128.000         ;
++----------------------+--------+------------------+
 
 
 ----------------------------------------------
@@ -283,18 +283,18 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 
 
 
-+-----------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                     ;
-+---------------------------+----------+-------+----------+---------+---------------------+
-; Clock                     ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+---------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack          ; -5.331   ; 0.140 ; N/A      ; N/A     ; -3.000              ;
-;  CLK1                     ; -4.364   ; 0.181 ; N/A      ; N/A     ; -3.000              ;
-;  m_prescale:comb_3|cnt[0] ; -5.331   ; 0.140 ; N/A      ; N/A     ; -1.403              ;
-; Design-wide TNS           ; -206.413 ; 0.0   ; 0.0      ; 0.0     ; -99.807             ;
-;  CLK1                     ; -84.063  ; 0.000 ; N/A      ; N/A     ; -31.060             ;
-;  m_prescale:comb_3|cnt[0] ; -122.350 ; 0.000 ; N/A      ; N/A     ; -68.747             ;
-+---------------------------+----------+-------+----------+---------+---------------------+
++-------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                 ;
++-----------------------+----------+-------+----------+---------+---------------------+
+; Clock                 ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-----------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack      ; -5.206   ; 0.140 ; N/A      ; N/A     ; -3.000              ;
+;  CLK1                 ; -4.716   ; 0.261 ; N/A      ; N/A     ; -3.000              ;
+;  m_prescale:u0|cnt[0] ; -5.206   ; 0.140 ; N/A      ; N/A     ; -1.403              ;
+; Design-wide TNS       ; -503.818 ; 0.0   ; 0.0      ; 0.0     ; -210.644            ;
+;  CLK1                 ; -94.193  ; 0.000 ; N/A      ; N/A     ; -31.060             ;
+;  m_prescale:u0|cnt[0] ; -409.625 ; 0.000 ; N/A      ; N/A     ; -179.584            ;
++-----------------------+----------+-------+----------+---------+---------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -386,11 +386,11 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; SW[8]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; SW[9]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; SW[0]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; KEY_ROW[0]          ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; KEY_ROW[2]          ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; KEY_ROW[3]          ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; KEY_ROW[1]          ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; CLK1                ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; KEY_ROW[3]          ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; KEY_ROW[2]          ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; KEY_ROW[0]          ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; KEY_ROW[1]          ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; ~ALTERA_TMS~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TCK~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TDI~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
@@ -614,27 +614,27 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Setup Transfers                                                                                 ;
-+--------------------------+--------------------------+----------+----------+----------+----------+
-; From Clock               ; To Clock                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+--------------------------+--------------------------+----------+----------+----------+----------+
-; CLK1                     ; CLK1                     ; 570      ; 0        ; 0        ; 0        ;
-; m_prescale:comb_3|cnt[0] ; CLK1                     ; 40       ; 40       ; 0        ; 0        ;
-; m_prescale:comb_3|cnt[0] ; m_prescale:comb_3|cnt[0] ; 5024     ; 0        ; 0        ; 0        ;
-+--------------------------+--------------------------+----------+----------+----------+----------+
++-----------------------------------------------------------------------------------------+
+; Setup Transfers                                                                         ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; CLK1                 ; CLK1                 ; 570      ; 0        ; 0        ; 0        ;
+; m_prescale:u0|cnt[0] ; CLK1                 ; 40       ; 40       ; 0        ; 0        ;
+; m_prescale:u0|cnt[0] ; m_prescale:u0|cnt[0] ; 31275    ; 0        ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+-------------------------------------------------------------------------------------------------+
-; Hold Transfers                                                                                  ;
-+--------------------------+--------------------------+----------+----------+----------+----------+
-; From Clock               ; To Clock                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+--------------------------+--------------------------+----------+----------+----------+----------+
-; CLK1                     ; CLK1                     ; 570      ; 0        ; 0        ; 0        ;
-; m_prescale:comb_3|cnt[0] ; CLK1                     ; 40       ; 40       ; 0        ; 0        ;
-; m_prescale:comb_3|cnt[0] ; m_prescale:comb_3|cnt[0] ; 5024     ; 0        ; 0        ; 0        ;
-+--------------------------+--------------------------+----------+----------+----------+----------+
++-----------------------------------------------------------------------------------------+
+; Hold Transfers                                                                          ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; CLK1                 ; CLK1                 ; 570      ; 0        ; 0        ; 0        ;
+; m_prescale:u0|cnt[0] ; CLK1                 ; 40       ; 40       ; 0        ; 0        ;
+; m_prescale:u0|cnt[0] ; m_prescale:u0|cnt[0] ; 31275    ; 0        ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -658,20 +658,20 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 5     ; 5    ;
-; Unconstrained Input Port Paths  ; 64    ; 64   ;
-; Unconstrained Output Ports      ; 32    ; 32   ;
-; Unconstrained Output Port Paths ; 165   ; 165  ;
+; Unconstrained Input Port Paths  ; 143   ; 143  ;
+; Unconstrained Output Ports      ; 50    ; 50   ;
+; Unconstrained Output Port Paths ; 2276  ; 2276 ;
 +---------------------------------+-------+------+
 
 
-+--------------------------------------------------------------------------+
-; Clock Status Summary                                                     ;
-+--------------------------+--------------------------+------+-------------+
-; Target                   ; Clock                    ; Type ; Status      ;
-+--------------------------+--------------------------+------+-------------+
-; CLK1                     ; CLK1                     ; Base ; Constrained ;
-; m_prescale:comb_3|cnt[0] ; m_prescale:comb_3|cnt[0] ; Base ; Constrained ;
-+--------------------------+--------------------------+------+-------------+
++------------------------------------------------------------------+
+; Clock Status Summary                                             ;
++----------------------+----------------------+------+-------------+
+; Target               ; Clock                ; Type ; Status      ;
++----------------------+----------------------+------+-------------+
+; CLK1                 ; CLK1                 ; Base ; Constrained ;
+; m_prescale:u0|cnt[0] ; m_prescale:u0|cnt[0] ; Base ; Constrained ;
++----------------------+----------------------+------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -700,11 +700,19 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; HEX0[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX0[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX3[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX3[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX3[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -712,6 +720,13 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; HEX3[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX3[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX3[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -724,6 +739,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; KEY_COL[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; KEY_COL[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LED[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
 
@@ -753,11 +771,19 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; HEX0[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX0[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX3[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX3[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX3[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -765,6 +791,13 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; HEX3[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX3[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX3[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -777,6 +810,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; KEY_COL[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; KEY_COL[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LED[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
 
@@ -786,7 +822,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Thu Dec 25 09:10:41 2025
+    Info: Processing started: Thu Dec 25 10:13:13 2025
 Info: Command: quartus_sta L31_Calculator -c TopModule
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -796,7 +832,7 @@ Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'TopModule.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name m_prescale:comb_3|cnt[0] m_prescale:comb_3|cnt[0]
+    Info (332105): create_clock -period 1.000 -name m_prescale:u0|cnt[0] m_prescale:u0|cnt[0]
     Info (332105): create_clock -period 1.000 -name CLK1 CLK1
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
@@ -804,23 +840,23 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -5.331
+Info (332146): Worst-case setup slack is -5.206
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.331            -122.350 m_prescale:comb_3|cnt[0] 
-    Info (332119):    -4.364             -84.063 CLK1 
+    Info (332119):    -5.206            -409.625 m_prescale:u0|cnt[0] 
+    Info (332119):    -4.716             -94.193 CLK1 
 Info (332146): Worst-case hold slack is 0.322
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.322               0.000 m_prescale:comb_3|cnt[0] 
-    Info (332119):     0.449               0.000 CLK1 
+    Info (332119):     0.322               0.000 m_prescale:u0|cnt[0] 
+    Info (332119):     0.668               0.000 CLK1 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -31.060 CLK1 
-    Info (332119):    -1.403             -68.747 m_prescale:comb_3|cnt[0] 
+    Info (332119):    -1.403            -179.584 m_prescale:u0|cnt[0] 
 Info (332114): Report Metastability: Found 16 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1200mV 0C Model
@@ -828,53 +864,53 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -4.854
+Info (332146): Worst-case setup slack is -4.665
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.854            -109.388 m_prescale:comb_3|cnt[0] 
-    Info (332119):    -4.023             -77.283 CLK1 
+    Info (332119):    -4.665            -363.931 m_prescale:u0|cnt[0] 
+    Info (332119):    -4.290             -85.654 CLK1 
 Info (332146): Worst-case hold slack is 0.289
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.289               0.000 m_prescale:comb_3|cnt[0] 
-    Info (332119):     0.411               0.000 CLK1 
+    Info (332119):     0.289               0.000 m_prescale:u0|cnt[0] 
+    Info (332119):     0.616               0.000 CLK1 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -31.060 CLK1 
-    Info (332119):    -1.403             -68.747 m_prescale:comb_3|cnt[0] 
+    Info (332119):    -1.403            -179.584 m_prescale:u0|cnt[0] 
 Info (332114): Report Metastability: Found 16 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.607
+Info (332146): Worst-case setup slack is -1.654
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.607             -25.449 m_prescale:comb_3|cnt[0] 
-    Info (332119):    -1.362             -26.499 CLK1 
+    Info (332119):    -1.654            -101.113 m_prescale:u0|cnt[0] 
+    Info (332119):    -1.500             -29.620 CLK1 
 Info (332146): Worst-case hold slack is 0.140
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.140               0.000 m_prescale:comb_3|cnt[0] 
-    Info (332119):     0.181               0.000 CLK1 
+    Info (332119):     0.140               0.000 m_prescale:u0|cnt[0] 
+    Info (332119):     0.261               0.000 CLK1 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -27.100 CLK1 
-    Info (332119):    -1.000             -49.000 m_prescale:comb_3|cnt[0] 
+    Info (332119):    -3.000             -27.196 CLK1 
+    Info (332119):    -1.000            -128.000 m_prescale:u0|cnt[0] 
 Info (332114): Report Metastability: Found 16 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 657 megabytes
-    Info: Processing ended: Thu Dec 25 09:10:43 2025
+    Info: Peak virtual memory: 669 megabytes
+    Info: Processing ended: Thu Dec 25 10:13:15 2025
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:04
 
 

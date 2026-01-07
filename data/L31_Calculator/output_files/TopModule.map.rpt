@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TopModule
-Thu Dec 25 09:10:27 2025
+Thu Dec 25 10:18:50 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -10,20 +10,7 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Port Connectivity Checks: "m_7segment:s3"
- 11. Port Connectivity Checks: "m_7segment:s1"
- 12. Port Connectivity Checks: "m_bcd_decorder:b0|m_bcd_add:u2|m_bcd_add4:u2"
- 13. Port Connectivity Checks: "m_bcd_decorder:b0|m_bcd_add:u2|m_bcd_add4:u0"
- 14. Port Connectivity Checks: "m_bcd_decorder:b0"
- 15. Port Connectivity Checks: "m_matrix_key:comb_4"
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -50,22 +37,22 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 25 09:10:27 2025           ;
+; Analysis & Synthesis Status        ; Failed - Thu Dec 25 10:18:50 2025               ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; TopModule                                       ;
 ; Top-level Entity Name              ; TopModule                                       ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 157                                             ;
-;     Total combinational functions  ; 125                                             ;
-;     Dedicated logic registers      ; 69                                              ;
-; Total registers                    ; 69                                              ;
-; Total pins                         ; 80                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-; UFM blocks                         ; 0                                               ;
-; ADC blocks                         ; 0                                               ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
+; UFM blocks                         ; N/A until Partition Merge                       ;
+; ADC blocks                         ; N/A until Partition Merge                       ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -164,212 +151,11 @@ on the Quartus Prime software download page.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                  ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                    ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
-; TopModule.v                      ; yes             ; User Verilog HDL File  ; /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v    ;         ;
-; Calculator.v                     ; yes             ; User Verilog HDL File  ; /home/kazu/school/HDL/report/data/L31_Calculator/Calculator.v   ;         ;
-; BCD_Decorder.v                   ; yes             ; User Verilog HDL File  ; /home/kazu/school/HDL/report/data/L31_Calculator/BCD_Decorder.v ;         ;
-; SevenSegment.v                   ; yes             ; User Verilog HDL File  ; /home/kazu/school/HDL/report/data/L31_Calculator/SevenSegment.v ;         ;
-; matrix_key.v                     ; yes             ; User Verilog HDL File  ; /home/kazu/school/HDL/report/data/L31_Calculator/matrix_key.v   ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
-
-
-+------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                            ;
-+---------------------------------------------+--------------------------+
-; Resource                                    ; Usage                    ;
-+---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 157                      ;
-;                                             ;                          ;
-; Total combinational functions               ; 125                      ;
-; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 76                       ;
-;     -- 3 input functions                    ; 13                       ;
-;     -- <=2 input functions                  ; 36                       ;
-;                                             ;                          ;
-; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 102                      ;
-;     -- arithmetic mode                      ; 23                       ;
-;                                             ;                          ;
-; Total registers                             ; 69                       ;
-;     -- Dedicated logic registers            ; 69                       ;
-;     -- I/O registers                        ; 0                        ;
-;                                             ;                          ;
-; I/O pins                                    ; 80                       ;
-;                                             ;                          ;
-; Embedded Multiplier 9-bit elements          ; 0                        ;
-;                                             ;                          ;
-; Maximum fan-out node                        ; m_prescale:comb_3|Equal0 ;
-; Maximum fan-out                             ; 69                       ;
-; Total fan-out                               ; 769                      ;
-; Average fan-out                             ; 2.17                     ;
-+---------------------------------------------+--------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                         ;
-+-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                     ; Entity Name     ; Library Name ;
-+-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------+-----------------+--------------+
-; |TopModule                  ; 125 (7)             ; 69 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 80   ; 0            ; 0          ; |TopModule                                              ; TopModule       ; work         ;
-;    |m_7segment:s0|          ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_7segment:s0                                ; m_7segment      ; work         ;
-;    |m_7segment:s2|          ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_7segment:s2                                ; m_7segment      ; work         ;
-;    |m_7segment:s4|          ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_7segment:s4                                ; m_7segment      ; work         ;
-;    |m_7segment:s5|          ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_7segment:s5                                ; m_7segment      ; work         ;
-;    |m_bcd_decorder:b0|      ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_bcd_decorder:b0                            ; m_bcd_decorder  ; work         ;
-;       |m_bcd_add:u2|        ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_bcd_decorder:b0|m_bcd_add:u2               ; m_bcd_add       ; work         ;
-;          |m_bcd_add4:u0|    ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_bcd_decorder:b0|m_bcd_add:u2|m_bcd_add4:u0 ; m_bcd_add4      ; work         ;
-;    |m_calculator:c0|        ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_calculator:c0                              ; m_calculator    ; work         ;
-;    |m_dec16to4_calc:comb_5| ; 38 (38)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_dec16to4_calc:comb_5                       ; m_dec16to4_calc ; work         ;
-;    |m_matrix_key:comb_4|    ; 16 (16)             ; 39 (39)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_matrix_key:comb_4                          ; m_matrix_key    ; work         ;
-;    |m_prescale:comb_3|      ; 27 (27)             ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TopModule|m_prescale:comb_3                            ; m_prescale      ; work         ;
-+-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------+-----------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 69    ;
-; Number of registers using Synchronous Clear  ; 20    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 44    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 44    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; m_matrix_key:comb_4|tmp[2]              ; 1       ;
-; m_matrix_key:comb_4|tmp[8]              ; 1       ;
-; m_matrix_key:comb_4|tmp[14]             ; 1       ;
-; m_matrix_key:comb_4|tmp[13]             ; 1       ;
-; m_matrix_key:comb_4|tmp[12]             ; 1       ;
-; m_matrix_key:comb_4|tmp[11]             ; 1       ;
-; m_matrix_key:comb_4|tmp[1]              ; 1       ;
-; m_matrix_key:comb_4|tmp[10]             ; 1       ;
-; m_matrix_key:comb_4|tmp[9]              ; 1       ;
-; m_matrix_key:comb_4|tmp[15]             ; 1       ;
-; m_matrix_key:comb_4|tmp[4]              ; 1       ;
-; m_matrix_key:comb_4|tmp[7]              ; 1       ;
-; m_matrix_key:comb_4|tmp[0]              ; 1       ;
-; m_matrix_key:comb_4|tmp[3]              ; 1       ;
-; m_matrix_key:comb_4|tmp[6]              ; 1       ;
-; m_matrix_key:comb_4|tmp[5]              ; 1       ;
-; Total number of inverted registers = 16 ;         ;
-+-----------------------------------------+---------+
-
-
-+-------------------------------------------+
-; Port Connectivity Checks: "m_7segment:s3" ;
-+------+-------+----------+-----------------+
-; Port ; Type  ; Severity ; Details         ;
-+------+-------+----------+-----------------+
-; idat ; Input ; Info     ; Stuck at VCC    ;
-+------+-------+----------+-----------------+
-
-
-+-------------------------------------------+
-; Port Connectivity Checks: "m_7segment:s1" ;
-+---------+-------+----------+--------------+
-; Port    ; Type  ; Severity ; Details      ;
-+---------+-------+----------+--------------+
-; idat[3] ; Input ; Info     ; Stuck at VCC ;
-; idat[2] ; Input ; Info     ; Stuck at GND ;
-; idat[1] ; Input ; Info     ; Stuck at VCC ;
-; idat[0] ; Input ; Info     ; Stuck at GND ;
-+---------+-------+----------+--------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "m_bcd_decorder:b0|m_bcd_add:u2|m_bcd_add4:u2"                                       ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------+
-; Port Connectivity Checks: "m_bcd_decorder:b0|m_bcd_add:u2|m_bcd_add4:u0" ;
-+------+-------+----------+------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                        ;
-+------+-------+----------+------------------------------------------------+
-; cin  ; Input ; Info     ; Stuck at GND                                   ;
-+------+-------+----------+------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "m_bcd_decorder:b0"                                                                        ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; bcd[11..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "m_matrix_key:comb_4"                                                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; tc   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 80                          ;
-; cycloneiii_ff         ; 69                          ;
-;     CLR               ; 4                           ;
-;     ENA               ; 4                           ;
-;     ENA CLR           ; 40                          ;
-;     SCLR              ; 20                          ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 133                         ;
-;     arith             ; 23                          ;
-;         2 data inputs ; 19                          ;
-;         3 data inputs ; 4                           ;
-;     normal            ; 110                         ;
-;         0 data inputs ; 3                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 14                          ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 76                          ;
-;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 3.45                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -378,7 +164,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Thu Dec 25 09:10:21 2025
+    Info: Processing started: Thu Dec 25 10:18:44 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off L31_Calculator -c TopModule
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -396,83 +182,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file SevenSe
     Info (12023): Found entity 1: m_7segment File: /home/kazu/school/HDL/report/data/L31_Calculator/SevenSegment.v Line: 2
 Info (12021): Found 3 design units, including 3 entities, in source file matrix_key.v
     Info (12023): Found entity 1: m_prescale File: /home/kazu/school/HDL/report/data/L31_Calculator/matrix_key.v Line: 2
-    Info (12023): Found entity 2: m_matrix_key File: /home/kazu/school/HDL/report/data/L31_Calculator/matrix_key.v Line: 18
-    Info (12023): Found entity 3: m_dec16to4_calc File: /home/kazu/school/HDL/report/data/L31_Calculator/matrix_key.v Line: 67
-Warning (10236): Verilog HDL Implicit Net warning at TopModule.v(39): created implicit net for "tc" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 39
-Critical Warning (10846): Verilog HDL Instantiation warning at TopModule.v(38): instance has no name File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 38
-Critical Warning (10846): Verilog HDL Instantiation warning at TopModule.v(39): instance has no name File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 39
-Critical Warning (10846): Verilog HDL Instantiation warning at TopModule.v(40): instance has no name File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 40
+    Info (12023): Found entity 2: m_matrix_key File: /home/kazu/school/HDL/report/data/L31_Calculator/matrix_key.v Line: 19
+    Info (12023): Found entity 3: m_dec16to4_calc File: /home/kazu/school/HDL/report/data/L31_Calculator/matrix_key.v Line: 68
 Info (12127): Elaborating entity "TopModule" for the top level hierarchy
-Info (12128): Elaborating entity "m_prescale" for hierarchy "m_prescale:comb_3" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 38
-Warning (10230): Verilog HDL assignment warning at matrix_key.v(13): truncated value with size 32 to match size of target (20) File: /home/kazu/school/HDL/report/data/L31_Calculator/matrix_key.v Line: 13
-Info (12128): Elaborating entity "m_matrix_key" for hierarchy "m_matrix_key:comb_4" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 39
-Info (12128): Elaborating entity "m_dec16to4_calc" for hierarchy "m_dec16to4_calc:comb_5" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 40
-Info (10264): Verilog HDL Case Statement information at matrix_key.v(75): all case item expressions in this case statement are onehot File: /home/kazu/school/HDL/report/data/L31_Calculator/matrix_key.v Line: 75
-Info (12128): Elaborating entity "m_calculator" for hierarchy "m_calculator:c0" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 74
-Info (12128): Elaborating entity "m_bcd_decorder" for hierarchy "m_bcd_decorder:b0" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 76
-Info (12128): Elaborating entity "m_bcd_table_l" for hierarchy "m_bcd_decorder:b0|m_bcd_table_l:u0" File: /home/kazu/school/HDL/report/data/L31_Calculator/BCD_Decorder.v Line: 5
-Info (12128): Elaborating entity "m_bcd_table_h" for hierarchy "m_bcd_decorder:b0|m_bcd_table_h:u1" File: /home/kazu/school/HDL/report/data/L31_Calculator/BCD_Decorder.v Line: 6
-Info (12128): Elaborating entity "m_bcd_add" for hierarchy "m_bcd_decorder:b0|m_bcd_add:u2" File: /home/kazu/school/HDL/report/data/L31_Calculator/BCD_Decorder.v Line: 7
-Info (12128): Elaborating entity "m_bcd_add4" for hierarchy "m_bcd_decorder:b0|m_bcd_add:u2|m_bcd_add4:u0" File: /home/kazu/school/HDL/report/data/L31_Calculator/BCD_Decorder.v Line: 68
-Warning (10230): Verilog HDL assignment warning at BCD_Decorder.v(80): truncated value with size 5 to match size of target (4) File: /home/kazu/school/HDL/report/data/L31_Calculator/BCD_Decorder.v Line: 80
-Info (12128): Elaborating entity "m_7segment" for hierarchy "m_7segment:s0" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 78
-Info (13000): Registers with preset signals will power-up high File: /home/kazu/school/HDL/report/data/L31_Calculator/matrix_key.v Line: 37
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 6
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 7
-    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 7
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 8
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 8
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 8
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 8
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 8
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 8
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 8
-    Warning (13410): Pin "HEX2[7]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 8
-    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 9
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 10
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 10
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 10
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 10
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 10
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 10
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 10
-    Warning (13410): Pin "HEX4[7]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 10
-    Warning (13410): Pin "HEX5[7]" is stuck at VCC File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 11
-    Warning (13410): Pin "LED[1]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 15
-    Warning (13410): Pin "LED[2]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 15
-    Warning (13410): Pin "LED[3]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 15
-    Warning (13410): Pin "LED[4]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 15
-    Warning (13410): Pin "LED[5]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 15
-    Warning (13410): Pin "LED[6]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 15
-    Warning (13410): Pin "LED[7]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 15
-    Warning (13410): Pin "LED[8]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 15
-    Warning (13410): Pin "LED[9]" is stuck at GND File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 15
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 12 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLK2" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 4
-    Warning (15610): No output dependent on input pin "BTN[0]" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 13
-    Warning (15610): No output dependent on input pin "BTN[1]" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 13
-    Warning (15610): No output dependent on input pin "SW[1]" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[2]" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[4]" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[5]" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[6]" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[7]" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[8]" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[9]" File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 17
-Info (21057): Implemented 247 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 18 input pins
-    Info (21059): Implemented 62 output pins
-    Info (21061): Implemented 167 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
-    Info: Peak virtual memory: 491 megabytes
-    Info: Processing ended: Thu Dec 25 09:10:27 2025
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:16
+Warning (10230): Verilog HDL assignment warning at TopModule.v(62): truncated value with size 32 to match size of target (3) File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 62
+Warning (10230): Verilog HDL assignment warning at TopModule.v(66): truncated value with size 32 to match size of target (3) File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 66
+Warning (10240): Verilog HDL Always Construct warning at TopModule.v(46): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 46
+Warning (10230): Verilog HDL assignment warning at TopModule.v(93): truncated value with size 32 to match size of target (20) File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 93
+Error (10119): Verilog HDL Loop Statement error at TopModule.v(92): loop with non-constant loop condition must terminate within 250 iterations File: /home/kazu/school/HDL/report/data/L31_Calculator/TopModule.v Line: 92
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 5 warnings
+    Error: Peak virtual memory: 359 megabytes
+    Error: Processing ended: Thu Dec 25 10:18:50 2025
+    Error: Elapsed time: 00:00:06
+    Error: Total CPU time (on all processors): 00:00:16
 
 

@@ -1,60 +1,60 @@
 |TopModule
 CLK1 => CLK1.IN1
 CLK2 => ~NO_FANOUT~
-HEX0[0] <= m_7segment:s5.port1
-HEX0[1] <= m_7segment:s5.port1
-HEX0[2] <= m_7segment:s5.port1
-HEX0[3] <= m_7segment:s5.port1
-HEX0[4] <= m_7segment:s5.port1
-HEX0[5] <= m_7segment:s5.port1
-HEX0[6] <= m_7segment:s5.port1
-HEX0[7] <= m_7segment:s5.port1
-HEX1[0] <= m_7segment:s4.port1
-HEX1[1] <= m_7segment:s4.port1
-HEX1[2] <= m_7segment:s4.port1
-HEX1[3] <= m_7segment:s4.port1
-HEX1[4] <= m_7segment:s4.port1
-HEX1[5] <= m_7segment:s4.port1
-HEX1[6] <= m_7segment:s4.port1
-HEX1[7] <= m_7segment:s4.port1
-HEX2[0] <= m_7segment:s3.port1
-HEX2[1] <= m_7segment:s3.port1
-HEX2[2] <= m_7segment:s3.port1
-HEX2[3] <= m_7segment:s3.port1
-HEX2[4] <= m_7segment:s3.port1
-HEX2[5] <= m_7segment:s3.port1
-HEX2[6] <= m_7segment:s3.port1
-HEX2[7] <= m_7segment:s3.port1
-HEX3[0] <= m_7segment:s2.port1
-HEX3[1] <= m_7segment:s2.port1
-HEX3[2] <= m_7segment:s2.port1
-HEX3[3] <= m_7segment:s2.port1
-HEX3[4] <= m_7segment:s2.port1
-HEX3[5] <= m_7segment:s2.port1
-HEX3[6] <= m_7segment:s2.port1
-HEX3[7] <= m_7segment:s2.port1
-HEX4[0] <= m_7segment:s1.port1
-HEX4[1] <= m_7segment:s1.port1
-HEX4[2] <= m_7segment:s1.port1
-HEX4[3] <= m_7segment:s1.port1
-HEX4[4] <= m_7segment:s1.port1
-HEX4[5] <= m_7segment:s1.port1
-HEX4[6] <= m_7segment:s1.port1
-HEX4[7] <= m_7segment:s1.port1
-HEX5[0] <= m_7segment:s0.port1
-HEX5[1] <= m_7segment:s0.port1
-HEX5[2] <= m_7segment:s0.port1
-HEX5[3] <= m_7segment:s0.port1
-HEX5[4] <= m_7segment:s0.port1
-HEX5[5] <= m_7segment:s0.port1
-HEX5[6] <= m_7segment:s0.port1
-HEX5[7] <= m_7segment:s0.port1
+HEX0[0] <= m_7segment:s0.port1
+HEX0[1] <= m_7segment:s0.port1
+HEX0[2] <= m_7segment:s0.port1
+HEX0[3] <= m_7segment:s0.port1
+HEX0[4] <= m_7segment:s0.port1
+HEX0[5] <= m_7segment:s0.port1
+HEX0[6] <= m_7segment:s0.port1
+HEX0[7] <= m_7segment:s0.port1
+HEX1[0] <= m_7segment:s1.port1
+HEX1[1] <= m_7segment:s1.port1
+HEX1[2] <= m_7segment:s1.port1
+HEX1[3] <= m_7segment:s1.port1
+HEX1[4] <= m_7segment:s1.port1
+HEX1[5] <= m_7segment:s1.port1
+HEX1[6] <= m_7segment:s1.port1
+HEX1[7] <= m_7segment:s1.port1
+HEX2[0] <= m_7segment:s2.port1
+HEX2[1] <= m_7segment:s2.port1
+HEX2[2] <= m_7segment:s2.port1
+HEX2[3] <= m_7segment:s2.port1
+HEX2[4] <= m_7segment:s2.port1
+HEX2[5] <= m_7segment:s2.port1
+HEX2[6] <= m_7segment:s2.port1
+HEX2[7] <= m_7segment:s2.port1
+HEX3[0] <= m_7segment:s3.port1
+HEX3[1] <= m_7segment:s3.port1
+HEX3[2] <= m_7segment:s3.port1
+HEX3[3] <= m_7segment:s3.port1
+HEX3[4] <= m_7segment:s3.port1
+HEX3[5] <= m_7segment:s3.port1
+HEX3[6] <= m_7segment:s3.port1
+HEX3[7] <= m_7segment:s3.port1
+HEX4[0] <= m_7segment:s4.port1
+HEX4[1] <= m_7segment:s4.port1
+HEX4[2] <= m_7segment:s4.port1
+HEX4[3] <= m_7segment:s4.port1
+HEX4[4] <= m_7segment:s4.port1
+HEX4[5] <= m_7segment:s4.port1
+HEX4[6] <= m_7segment:s4.port1
+HEX4[7] <= m_7segment:s4.port1
+HEX5[0] <= m_7segment:s5.port1
+HEX5[1] <= m_7segment:s5.port1
+HEX5[2] <= m_7segment:s5.port1
+HEX5[3] <= m_7segment:s5.port1
+HEX5[4] <= m_7segment:s5.port1
+HEX5[5] <= m_7segment:s5.port1
+HEX5[6] <= m_7segment:s5.port1
+HEX5[7] <= m_7segment:s5.port1
 BTN[0] => ~NO_FANOUT~
 BTN[1] => ~NO_FANOUT~
-LED[0] <= stat.DB_MAX_OUTPUT_PORT_TYPE
-LED[1] <= <GND>
-LED[2] <= <GND>
-LED[3] <= <GND>
+LED[0] <= state[0].DB_MAX_OUTPUT_PORT_TYPE
+LED[1] <= state[1].DB_MAX_OUTPUT_PORT_TYPE
+LED[2] <= op[0].DB_MAX_OUTPUT_PORT_TYPE
+LED[3] <= op[1].DB_MAX_OUTPUT_PORT_TYPE
 LED[4] <= <GND>
 LED[5] <= <GND>
 LED[6] <= <GND>
@@ -75,13 +75,13 @@ KEY_ROW[0] => KEY_ROW[0].IN1
 KEY_ROW[1] => KEY_ROW[1].IN1
 KEY_ROW[2] => KEY_ROW[2].IN1
 KEY_ROW[3] => KEY_ROW[3].IN1
-KEY_COL[0] <= m_matrix_key:comb_4.port3
-KEY_COL[1] <= m_matrix_key:comb_4.port3
-KEY_COL[2] <= m_matrix_key:comb_4.port3
-KEY_COL[3] <= m_matrix_key:comb_4.port3
+KEY_COL[0] <= m_matrix_key:u1.port3
+KEY_COL[1] <= m_matrix_key:u1.port3
+KEY_COL[2] <= m_matrix_key:u1.port3
+KEY_COL[3] <= m_matrix_key:u1.port3
 
 
-|TopModule|m_prescale:comb_3
+|TopModule|m_prescale:u0
 clk => cnt[0].CLK
 clk => cnt[1].CLK
 clk => cnt[2].CLK
@@ -105,7 +105,7 @@ clk => cnt[19].CLK
 c_out <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopModule|m_matrix_key:comb_4
+|TopModule|m_matrix_key:u1
 clk => col[0]~reg0.CLK
 clk => col[1]~reg0.CLK
 clk => col[2]~reg0.CLK
@@ -223,7 +223,7 @@ key[15] <= key[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 tc <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopModule|m_dec16to4_calc:comb_5
+|TopModule|m_dec16to4_calc:u2
 key[0] => Equal0.IN31
 key[0] => Equal1.IN31
 key[0] => Equal2.IN31
@@ -485,176 +485,6 @@ out[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
 out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 pushed <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|TopModule|m_calculator:c0
-in1[0] => Add0.IN4
-in1[1] => Add0.IN3
-in1[2] => Add0.IN2
-in1[3] => Add0.IN1
-in2[0] => Add0.IN8
-in2[1] => Add0.IN7
-in2[2] => Add0.IN6
-in2[3] => Add0.IN5
-out[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= <GND>
-out[6] <= <GND>
-out[7] <= <GND>
-
-
-|TopModule|m_bcd_decorder:b0
-bin[0] => bin[0].IN1
-bin[1] => bin[1].IN1
-bin[2] => bin[2].IN1
-bin[3] => bin[3].IN1
-bin[4] => bin[4].IN1
-bin[5] => bin[5].IN1
-bin[6] => bin[6].IN1
-bin[7] => bin[7].IN1
-bcd[0] <= m_bcd_add:u2.port2
-bcd[1] <= m_bcd_add:u2.port2
-bcd[2] <= m_bcd_add:u2.port2
-bcd[3] <= m_bcd_add:u2.port2
-bcd[4] <= m_bcd_add:u2.port2
-bcd[5] <= m_bcd_add:u2.port2
-bcd[6] <= m_bcd_add:u2.port2
-bcd[7] <= m_bcd_add:u2.port2
-bcd[8] <= m_bcd_add:u2.port2
-bcd[9] <= m_bcd_add:u2.port2
-bcd[10] <= m_bcd_add:u2.port2
-bcd[11] <= m_bcd_add:u2.port2
-
-
-|TopModule|m_bcd_decorder:b0|m_bcd_table_l:u0
-adr[0] => dat[0].DATAIN
-adr[1] => Decoder0.IN2
-adr[2] => Decoder0.IN1
-adr[3] => Decoder0.IN0
-dat[0] <= adr[0].DB_MAX_OUTPUT_PORT_TYPE
-dat[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-dat[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-dat[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-dat[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-dat[5] <= <GND>
-dat[6] <= <GND>
-dat[7] <= <GND>
-dat[8] <= <GND>
-dat[9] <= <GND>
-dat[10] <= <GND>
-dat[11] <= <GND>
-
-
-|TopModule|m_bcd_decorder:b0|m_bcd_table_h:u1
-adr[0] => Decoder0.IN3
-adr[1] => Decoder0.IN2
-adr[2] => Decoder0.IN1
-adr[3] => Decoder0.IN0
-dat[0] <= <GND>
-dat[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-dat[2] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
-dat[3] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-dat[4] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-dat[5] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-dat[6] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-dat[7] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-dat[8] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-dat[9] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-dat[10] <= <GND>
-dat[11] <= <GND>
-
-
-|TopModule|m_bcd_decorder:b0|m_bcd_add:u2
-dat_a[0] => dat_a[0].IN1
-dat_a[1] => dat_a[1].IN1
-dat_a[2] => dat_a[2].IN1
-dat_a[3] => dat_a[3].IN1
-dat_a[4] => dat_a[4].IN1
-dat_a[5] => dat_a[5].IN1
-dat_a[6] => dat_a[6].IN1
-dat_a[7] => dat_a[7].IN1
-dat_a[8] => dat_a[8].IN1
-dat_a[9] => dat_a[9].IN1
-dat_a[10] => dat_a[10].IN1
-dat_a[11] => dat_a[11].IN1
-dat_b[0] => dat_b[0].IN1
-dat_b[1] => dat_b[1].IN1
-dat_b[2] => dat_b[2].IN1
-dat_b[3] => dat_b[3].IN1
-dat_b[4] => dat_b[4].IN1
-dat_b[5] => dat_b[5].IN1
-dat_b[6] => dat_b[6].IN1
-dat_b[7] => dat_b[7].IN1
-dat_b[8] => dat_b[8].IN1
-dat_b[9] => dat_b[9].IN1
-dat_b[10] => dat_b[10].IN1
-dat_b[11] => dat_b[11].IN1
-dout[0] <= m_bcd_add4:u0.port4
-dout[1] <= m_bcd_add4:u0.port4
-dout[2] <= m_bcd_add4:u0.port4
-dout[3] <= m_bcd_add4:u0.port4
-dout[4] <= m_bcd_add4:u1.port4
-dout[5] <= m_bcd_add4:u1.port4
-dout[6] <= m_bcd_add4:u1.port4
-dout[7] <= m_bcd_add4:u1.port4
-dout[8] <= m_bcd_add4:u2.port4
-dout[9] <= m_bcd_add4:u2.port4
-dout[10] <= m_bcd_add4:u2.port4
-dout[11] <= m_bcd_add4:u2.port4
-
-
-|TopModule|m_bcd_decorder:b0|m_bcd_add:u2|m_bcd_add4:u0
-dat_a[0] => Add0.IN4
-dat_a[1] => Add0.IN3
-dat_a[2] => Add0.IN2
-dat_a[3] => Add0.IN1
-dat_b[0] => Add0.IN8
-dat_b[1] => Add0.IN7
-dat_b[2] => Add0.IN6
-dat_b[3] => Add0.IN5
-cin => Add1.IN10
-cout <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
-dout[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
-dout[1] <= dout.DB_MAX_OUTPUT_PORT_TYPE
-dout[2] <= dout.DB_MAX_OUTPUT_PORT_TYPE
-dout[3] <= dout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|TopModule|m_bcd_decorder:b0|m_bcd_add:u2|m_bcd_add4:u1
-dat_a[0] => Add0.IN4
-dat_a[1] => Add0.IN3
-dat_a[2] => Add0.IN2
-dat_a[3] => Add0.IN1
-dat_b[0] => Add0.IN8
-dat_b[1] => Add0.IN7
-dat_b[2] => Add0.IN6
-dat_b[3] => Add0.IN5
-cin => Add1.IN10
-cout <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
-dout[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
-dout[1] <= dout.DB_MAX_OUTPUT_PORT_TYPE
-dout[2] <= dout.DB_MAX_OUTPUT_PORT_TYPE
-dout[3] <= dout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|TopModule|m_bcd_decorder:b0|m_bcd_add:u2|m_bcd_add4:u2
-dat_a[0] => Add0.IN4
-dat_a[1] => Add0.IN3
-dat_a[2] => Add0.IN2
-dat_a[3] => Add0.IN1
-dat_b[0] => Add0.IN8
-dat_b[1] => Add0.IN7
-dat_b[2] => Add0.IN6
-dat_b[3] => Add0.IN5
-cin => Add1.IN10
-cout <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
-dout[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
-dout[1] <= dout.DB_MAX_OUTPUT_PORT_TYPE
-dout[2] <= dout.DB_MAX_OUTPUT_PORT_TYPE
-dout[3] <= dout.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TopModule|m_7segment:s0

@@ -7,11 +7,12 @@ module m_prescale(input clk,output c_out);
 	assign c_out=wcout;
 	
 	always @(posedge clk) begin
-		if(wcout==1'b1)
-			cnt=0;
+		if (wcout)
+			cnt <= 20'd0;
 		else
-			cnt=cnt+1;
+			cnt <= cnt + 20'd1;
 	end
+
 endmodule
 
 

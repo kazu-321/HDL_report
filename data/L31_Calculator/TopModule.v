@@ -1,94 +1,163 @@
 module TopModule(
-	//////////// CLOCK //////////
-	input 		          		CLK1,
-	input 		          		CLK2,
-	//////////// SEG7 //////////
-	output		     [7:0]		HEX0,
-	output		     [7:0]		HEX1,
-	output		     [7:0]		HEX2,
-	output		     [7:0]		HEX3,
-	output		     [7:0]		HEX4,
-	output		     [7:0]		HEX5,
-	//////////// Push Button //////////
-	input 		     [1:0]		BTN,
-	//////////// LED //////////
-	output		     [9:0]		LED,
-	//////////// SW //////////
-	input 		     [9:0]		SW,
-	
-	//////////// Matrix Key ///////////
-	input            [3:0]     KEY_ROW,
-	output           [3:0]     KEY_COL
+    input            CLK1,
+    input            CLK2,
+    output     [7:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5,
+    input      [1:0] BTN,
+    output     [9:0] LED,
+    input      [9:0] SW,
+    input      [3:0] KEY_ROW,
+    output     [3:0] KEY_COL
+);
 
-	);
-	
-	wire clk;
-	wire [3:0]  out;				//押下キー(4bit)
-	wire [15:0] key;				//押下キー(16bit)
-	wire [7:0]  dec_pat[0:5];	//7セグ表示パターン
-	wire pushed;					//打鍵検出
-	reg  pushed_d;
+    /* ===== Clock & Key ===== */
+    wire clk;
+    wire [3:0] key_val;
+    wire [15:0] key_raw;
+    wire pushed;
+    wire tc;
+    reg  pushed_d;
 
-	
-	reg  [3:0] in1, in2;		// 入力値1,2
-	wire [7:0] ans;			// 演算結果
-	wire [3:0] ans0,ans1,ans2;	// 演算結果(2進化10進数)
-	reg  stat;		// 状態変数
-	
-	m_prescale(CLK1, clk);	//クロック(100Hz)の生成
-	m_matrix_key(clk, SW[0], KEY_ROW, KEY_COL, key, tc);	//マトリックスキーの打鍵検出
-	m_dec16to4_calc(key, out, pushed);	// 16bit→4bitデコーダ(計算機仕様に変更)
-	
-	//初期設定
-	initial begin
-		stat <= 1'b0;
-		in1 <= 4'h0;
-		in2 <= 4'h0;
-	end
-	
-	always @(posedge clk) begin
-		pushed_d <= pushed; // pushedを遅延させる
-	end
-	always @(posedge clk or posedge SW[0])begin
-		//SW[0]はリセット
-		if(SW[0]==1'b1)begin
-			stat <= 1'b0;
-			in1 <= 4'h0;
-			in2 <= 4'h0;
-		end
-		// pushの変化を検出
-		else if (pushed && !pushed_d) begin
-			//状態0のとき in1に値を入力 =>状態遷移
-			if(stat==1'b0)begin
-				in1 <= (out<=9) ? out:4'he ;
-				stat <= 1'b1;
-			end
-			//状態1のとき in2に値を入力 =>状態遷移
-			else begin
-				in2 <= (out<=9) ? out:4'he ;
-				stat <= 1'b0;
-			end
-		end
-	end
-	
-	m_calculator c0(in1,in2,ans);	//演算回路（4bit加算器）
-	
-	m_bcd_decorder b0(ans, {ans2,ans1,ans0});	// 2進数8bit => ３桁の2進化10進数(BCD)に変換
-	
-	m_7segment s0(in1,  dec_pat[5]);		// 入力１
-	m_7segment s1(4'ha, dec_pat[4]);		// +
-	m_7segment s2(in2,  dec_pat[3]);		// 入力２
-	m_7segment s3(4'hf, dec_pat[2]);		// =
-	m_7segment s4(ans1, dec_pat[1]);		// 答え（１０の位）
-	m_7segment s5(ans0, dec_pat[0]);		// 答え（１の位）
+    m_prescale      u0 (CLK1, clk);
+    m_matrix_key    u1 (clk, SW[0], KEY_ROW, KEY_COL, key_raw, tc);
+    m_dec16to4_calc u2 (key_raw, key_val, pushed);
 
-	assign LED = {7'd0, stat};	//LEDには状態変数を表示
-	
-	assign HEX0 = dec_pat[0];
-	assign HEX1 = dec_pat[1];
-	assign HEX2 = dec_pat[2];
-	assign HEX3 = dec_pat[3];
-	assign HEX4 = dec_pat[4];
-	assign HEX5 = dec_pat[5];
-	
+    always @(posedge clk) pushed_d <= pushed;
+
+    /* ===== State ===== */
+    // state: 0=num1 1=num2 2=result
+    reg [1:0] state;
+    // op: 00:+ 01:- 10:* 11:/
+    reg [1:0] op;
+
+    /* ===== Input BCD ===== */
+    reg [3:0] num1 [0:5];
+    reg [3:0] num2 [0:5];
+    reg [2:0] len1, len2;
+
+    /* ===== Binary ===== */
+    reg [19:0] bin1, bin2;
+    reg [39:0] bin_ans;
+
+    /* ===== Result BCD ===== */
+    reg [3:0] bcd_ans [0:11];
+
+    /* ===== Reset & Input ===== */
+    integer i;
+    always @(posedge clk or posedge SW[0]) begin
+        if (SW[0]) begin
+            state <= 0;
+            op    <= 0;
+            len1  <= 0;
+            len2  <= 0;
+            bin_ans <= 0;
+            for (i=0;i<6;i=i+1) begin
+                num1[i] <= 0;
+                num2[i] <= 0;
+            end
+        end
+        else if (pushed && !pushed_d) begin
+            if (key_val <= 9) begin
+                if (state==0 && len1<6) begin
+                    num1[len1] <= key_val;
+                    len1 <= len1 + 1;
+                end
+                else if (state==1 && len2<6) begin
+                    num2[len2] <= key_val;
+                    len2 <= len2 + 1;
+                end
+            end
+            else begin
+                case (key_val)
+                    4'hA: begin op<=2'b00; state<=1; len2<=0; end // +
+                    4'hB: begin op<=2'b01; state<=1; len2<=0; end // -
+                    4'hC: begin op<=2'b10; state<=1; len2<=0; end // *
+                    4'hD: begin op<=2'b11; state<=1; len2<=0; end // /
+                    4'hF: begin
+                        state <= 2;
+                        case (op)
+                            2'b00: bin_ans <= bin1 + bin2;
+                            2'b01: bin_ans <= (bin1>=bin2)?(bin1-bin2):0;
+                            2'b10: bin_ans <= bin1 * bin2;
+                            2'b11: bin_ans <= (bin2!=0)?(bin1/bin2):0;
+                        endcase
+                    end
+                endcase
+            end
+        end
+    end
+
+    /* ===== BCD -> BIN ===== */
+    always @(*) begin
+        bin1 = 0;
+        for (i=len1-1;i>=0;i=i-1)
+            bin1 = bin1*10 + num1[i];
+
+        bin2 = 0;
+        for (i=len2-1;i>=0;i=i-1)
+            bin2 = bin2*10 + num2[i];
+    end
+
+    /* ===== BIN -> BCD (Double Dabble) ===== */
+    integer j;
+    reg [95:0] work;
+    always @(*) begin
+        work = 0;
+        work[39:0] = bin_ans;
+        for (i=0;i<40;i=i+1) begin
+            for (j=0;j<12;j=j+1)
+                if (work[40+j*4 +:4] >= 5)
+                    work[40+j*4 +:4] = work[40+j*4 +:4] + 3;
+            work = work << 1;
+        end
+        for (i=0;i<12;i=i+1)
+            bcd_ans[i] = work[40+i*4 +:4];
+    end
+
+    /* ===== Scroll ===== */
+    reg [25:0] cnt;
+    reg [3:0] disp_idx;
+
+    always @(posedge clk or posedge SW[0]) begin
+        if (SW[0]) begin
+            cnt <= 0;
+            disp_idx <= 0;
+        end
+        else if (cnt == 26'd25_000_000) begin
+            cnt <= 0;
+            disp_idx <= (disp_idx==11)?0:disp_idx+1;
+        end
+        else cnt <= cnt + 1;
+    end
+
+    /* ===== Display source ===== */
+    wire [3:0] disp_bcd [0:11];
+    genvar g;
+    generate
+        for (g=0;g<12;g=g+1) begin: DISPSEL
+            assign disp_bcd[g] =
+                (state==2) ? bcd_ans[g] :
+                (state==1 && g<6) ? num2[g] :
+                (state==0 && g<6) ? num1[g] :
+                4'd0;
+        end
+    endgenerate
+
+    /* ===== 7seg ===== */
+    wire [7:0] dec_pat [0:5];
+    m_7segment s0(disp_bcd[disp_idx+0], dec_pat[0]);
+    m_7segment s1(disp_bcd[disp_idx+1], dec_pat[1]);
+    m_7segment s2(disp_bcd[disp_idx+2], dec_pat[2]);
+    m_7segment s3(disp_bcd[disp_idx+3], dec_pat[3]);
+    m_7segment s4(disp_bcd[disp_idx+4], dec_pat[4]);
+    m_7segment s5(disp_bcd[disp_idx+5], dec_pat[5]);
+
+    assign HEX0 = dec_pat[0];
+    assign HEX1 = dec_pat[1];
+    assign HEX2 = dec_pat[2];
+    assign HEX3 = dec_pat[3];
+    assign HEX4 = dec_pat[4];
+    assign HEX5 = dec_pat[5];
+
+    assign LED = {6'd0, op, state};
+
 endmodule
