@@ -208,7 +208,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLK1",
+					"name" : "KEY_ROW[1]",
 					"strict" : false
 				},
 				{
@@ -224,7 +224,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY_ROW[1]",
+					"name" : "CLK1",
 					"strict" : false
 				}
 			]

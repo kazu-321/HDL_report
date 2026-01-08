@@ -19,8 +19,8 @@ module m_7segment(input [3:0] idat, output [7:0] odat);
            4'hb:        LedDec = 8'b10111111;  // -
            4'hc:        LedDec = 8'b10001001;  // *
            4'hd:        LedDec = 8'b10101101;  // /
-           4'he:        LedDec = 8'b11111111;  // LED OFF
-           4'hf:        LedDec = 8'b10110111;  // =
+           4'he:        LedDec = 8'b10110111;  // =
+           4'hf:        LedDec = 8'b11111111;  // LED OFF
            default:     LedDec = 8'b11111111;  // LED OFF
          endcase
       end 

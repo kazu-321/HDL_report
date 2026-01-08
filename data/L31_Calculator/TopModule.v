@@ -14,20 +14,18 @@ module TopModule(
     wire [3:0] key_val;
     wire [15:0] key_raw;
     wire pushed;
-    wire tc;
     reg  pushed_d;
 
     m_prescale      u0 (CLK1, clk);
-    m_matrix_key    u1 (clk, SW[0], KEY_ROW, KEY_COL, key_raw, tc);
+    m_matrix_key    u1 (clk, SW[0], KEY_ROW, KEY_COL, key_raw);
     m_dec16to4_calc u2 (key_raw, key_val, pushed);
 
-    always @(posedge clk) pushed_d <= pushed;
+    always @(posedge clk)
+        pushed_d <= pushed;
 
     /* ===== State ===== */
-    // state: 0=num1 1=num2 2=result
-    reg [1:0] state;
-    // op: 00:+ 01:- 10:* 11:/
-    reg [1:0] op;
+    reg [1:0] state;   // 0:num1 1:num2 2:result
+    reg [1:0] op;      // 00:+ 01:- 10:* 11:/
 
     /* ===== Input BCD ===== */
     reg [3:0] num1 [0:5];
@@ -40,9 +38,38 @@ module TopModule(
 
     /* ===== Result BCD ===== */
     reg [3:0] bcd_ans [0:11];
+    reg [39:0] tmp;
+
+    /* ===== Scroll Result ==== */
+    reg [23:0] cnt;
+    reg scroll_tick;
+    reg [3:0] scroll_pos;  // 0～12
+
+    always @(posedge clk or posedge SW[0]) begin
+        if (SW[0]) begin
+            cnt <= 0;
+            scroll_tick <= 1'b0;
+        end
+        else begin
+            if (cnt == 24'd10000000) begin
+                cnt <= 0;
+                scroll_tick <= 1'b1;
+            end
+            else begin
+                cnt <= cnt + 1'b1;
+                scroll_tick <= 1'b0;
+            end
+            if (state == 2 && scroll_tick) begin
+                scroll_tick <= 1'b0;
+                if (scroll_pos == 4'd12)
+                    scroll_pos <= 0;
+                else
+                    scroll_pos <= scroll_pos + 1'b1;
+            end
+        end
+    end
 
     /* ===== Reset & Input ===== */
-    integer i;
     always @(posedge clk or posedge SW[0]) begin
         if (SW[0]) begin
             state <= 0;
@@ -50,28 +77,51 @@ module TopModule(
             len1  <= 0;
             len2  <= 0;
             bin_ans <= 0;
-            for (i=0;i<6;i=i+1) begin
-                num1[i] <= 0;
-                num2[i] <= 0;
-            end
+
+            num1[0]<=0; num1[1]<=0; num1[2]<=0;
+            num1[3]<=0; num1[4]<=0; num1[5]<=0;
+            num2[0]<=0; num2[1]<=0; num2[2]<=0;
+            num2[3]<=0; num2[4]<=0; num2[5]<=0;
         end
         else if (pushed && !pushed_d) begin
             if (key_val <= 9) begin
                 if (state==0 && len1<6) begin
-                    num1[len1] <= key_val;
-                    len1 <= len1 + 1;
+                    num1[5] <= num1[4];
+                    num1[4] <= num1[3];
+                    num1[3] <= num1[2];
+                    num1[2] <= num1[1];
+                    num1[1] <= num1[0];
+                    num1[0] <= key_val;
+                    len1 <= len1 + 1'b1;
                 end
                 else if (state==1 && len2<6) begin
-                    num2[len2] <= key_val;
-                    len2 <= len2 + 1;
+                    num2[5] <= num2[4];
+                    num2[4] <= num2[3];
+                    num2[3] <= num2[2];
+                    num2[2] <= num2[1];
+                    num2[1] <= num2[0];
+                    num2[0] <= key_val;
+                    len2 <= len2 + 1'b1;
                 end
             end
             else begin
                 case (key_val)
-                    4'hA: begin op<=2'b00; state<=1; len2<=0; end // +
-                    4'hB: begin op<=2'b01; state<=1; len2<=0; end // -
-                    4'hC: begin op<=2'b10; state<=1; len2<=0; end // *
-                    4'hD: begin op<=2'b11; state<=1; len2<=0; end // /
+                    4'hA: begin op<=2'b00; state<=1; len2<=0; end
+                    4'hB: begin op<=2'b01; state<=1; len2<=0; end
+                    4'hC: begin op<=2'b10; state<=1; len2<=0; end
+                    4'hD: begin op<=2'b11; state<=1; len2<=0; end
+                    4'hE: begin
+                        state <= 0;
+                        op    <= 0;
+                        len1  <= 0;
+                        len2  <= 0;
+                        bin_ans <= 0;
+
+                        num1[0]<=0; num1[1]<=0; num1[2]<=0;
+                        num1[3]<=0; num1[4]<=0; num1[5]<=0;
+                        num2[0]<=0; num2[1]<=0; num2[2]<=0;
+                        num2[3]<=0; num2[4]<=0; num2[5]<=0;
+                    end
                     4'hF: begin
                         state <= 2;
                         case (op)
@@ -88,76 +138,79 @@ module TopModule(
 
     /* ===== BCD -> BIN ===== */
     always @(*) begin
-        bin1 = 0;
-        for (i=len1-1;i>=0;i=i-1)
-            bin1 = bin1*10 + num1[i];
+        bin1 =
+            (((((num1[5]*10 + num1[4])*10 + num1[3])*10
+              + num1[2])*10 + num1[1])*10 + num1[0]);
 
-        bin2 = 0;
-        for (i=len2-1;i>=0;i=i-1)
-            bin2 = bin2*10 + num2[i];
+        bin2 =
+            (((((num2[5]*10 + num2[4])*10 + num2[3])*10
+              + num2[2])*10 + num2[1])*10 + num2[0]);
     end
 
-    /* ===== BIN -> BCD (Double Dabble) ===== */
-    integer j;
-    reg [95:0] work;
+    /* ===== BIN -> BCD（10進分解） ===== */
     always @(*) begin
-        work = 0;
-        work[39:0] = bin_ans;
-        for (i=0;i<40;i=i+1) begin
-            for (j=0;j<12;j=j+1)
-                if (work[40+j*4 +:4] >= 5)
-                    work[40+j*4 +:4] = work[40+j*4 +:4] + 3;
-            work = work << 1;
-        end
-        for (i=0;i<12;i=i+1)
-            bcd_ans[i] = work[40+i*4 +:4];
+        tmp = bin_ans;
+
+        bcd_ans[0]  = tmp % 10;  tmp = tmp / 10;
+        bcd_ans[1]  = tmp % 10;  tmp = tmp / 10;
+        bcd_ans[2]  = tmp % 10;  tmp = tmp / 10;
+        bcd_ans[3]  = tmp % 10;  tmp = tmp / 10;
+        bcd_ans[4]  = tmp % 10;  tmp = tmp / 10;
+        bcd_ans[5]  = tmp % 10;  tmp = tmp / 10;
+        bcd_ans[6]  = tmp % 10;  tmp = tmp / 10;
+        bcd_ans[7]  = tmp % 10;  tmp = tmp / 10;
+        bcd_ans[8]  = tmp % 10;  tmp = tmp / 10;
+        bcd_ans[9]  = tmp % 10;  tmp = tmp / 10;
+        bcd_ans[10] = tmp % 10;  tmp = tmp / 10;
+        bcd_ans[11] = tmp % 10;
     end
 
-    /* ===== Scroll ===== */
-    reg [25:0] cnt;
-    reg [3:0] disp_idx;
+    /* ===== Display select ===== */
+    reg  [3:0] d0, d1, d2, d3, d4, d5;
 
-    always @(posedge clk or posedge SW[0]) begin
-        if (SW[0]) begin
-            cnt <= 0;
-            disp_idx <= 0;
+    always @(*) begin
+        d0 = 4'hF;
+        d1 = 4'hF;
+        d2 = 4'hF;
+        d3 = 4'hF;
+        d4 = 4'hF;
+        d5 = 4'hF;
+        if (state < 2) begin
+            if (state == 0) begin
+                d0 = (len1>0)?num1[0]:4'hf;
+                d1 = (len1>1)?num1[1]:4'hf;
+                d2 = (len1>2)?num1[2]:4'hf;
+                d3 = (len1>3)?num1[3]:4'hf;
+                d4 = (len1>4)?num1[4]:4'hf;
+                d5 = (len1>5)?num1[5]:4'hf;
+            end
+            else if (state == 1) begin
+                d0 = (len2>0)?num2[0]:4'hf;
+                d1 = (len2>1)?num2[1]:4'hf;
+                d2 = (len2>2)?num2[2]:4'hf;
+                d3 = (len2>3)?num2[3]:4'hf;
+                d4 = (len2>4)?num2[4]:4'hf;
+                d5 = (len2>5)?num2[5]:4'hf;
+            end
         end
-        else if (cnt == 26'd25_000_000) begin
-            cnt <= 0;
-            disp_idx <= (disp_idx==11)?0:disp_idx+1;
+        else if (state == 2) begin
+            d0 = bcd_ans[0];
+            d1 = bcd_ans[1];
+            d2 = bcd_ans[2];
+            d3 = bcd_ans[3];
+            d4 = bcd_ans[4];
+            d5 = scroll_pos;
         end
-        else cnt <= cnt + 1;
     end
-
-    /* ===== Display source ===== */
-    wire [3:0] disp_bcd [0:11];
-    genvar g;
-    generate
-        for (g=0;g<12;g=g+1) begin: DISPSEL
-            assign disp_bcd[g] =
-                (state==2) ? bcd_ans[g] :
-                (state==1 && g<6) ? num2[g] :
-                (state==0 && g<6) ? num1[g] :
-                4'd0;
-        end
-    endgenerate
 
     /* ===== 7seg ===== */
-    wire [7:0] dec_pat [0:5];
-    m_7segment s0(disp_bcd[disp_idx+0], dec_pat[0]);
-    m_7segment s1(disp_bcd[disp_idx+1], dec_pat[1]);
-    m_7segment s2(disp_bcd[disp_idx+2], dec_pat[2]);
-    m_7segment s3(disp_bcd[disp_idx+3], dec_pat[3]);
-    m_7segment s4(disp_bcd[disp_idx+4], dec_pat[4]);
-    m_7segment s5(disp_bcd[disp_idx+5], dec_pat[5]);
+    m_7segment s0(d0, HEX0);
+    m_7segment s1(d1, HEX1);
+    m_7segment s2(d2, HEX2);
+    m_7segment s3(d3, HEX3);
+    m_7segment s4(d4, HEX4);
+    m_7segment s5(d5, HEX5);
 
-    assign HEX0 = dec_pat[0];
-    assign HEX1 = dec_pat[1];
-    assign HEX2 = dec_pat[2];
-    assign HEX3 = dec_pat[3];
-    assign HEX4 = dec_pat[4];
-    assign HEX5 = dec_pat[5];
-
-    assign LED = {6'd0, op, state};
+    assign LED = {5'd0, scroll_tick, op, state};
 
 endmodule
