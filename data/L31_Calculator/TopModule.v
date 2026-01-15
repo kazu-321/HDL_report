@@ -37,11 +37,11 @@ module TopModule(
     reg [39:0] bin_ans;
 
     /* ===== Result BCD ===== */
-    reg [3:0] bcd_ans [0:11];
+    reg [3:0] bcd_ans [0:12];
     reg [39:0] tmp;
 
     /* ===== Scroll Result ==== */
-    reg [23:0] cnt;
+    reg [7:0] cnt;
     reg scroll_tick;
     reg [3:0] scroll_pos;  // 0～12
 
@@ -49,9 +49,10 @@ module TopModule(
         if (SW[0]) begin
             cnt <= 0;
             scroll_tick <= 1'b0;
+            scroll_pos <= 4'd7;
         end
-        else begin
-            if (cnt == 24'd10000000) begin
+        else if(state == 2) begin
+            if (cnt == 8'd30) begin
                 cnt <= 0;
                 scroll_tick <= 1'b1;
             end
@@ -59,13 +60,18 @@ module TopModule(
                 cnt <= cnt + 1'b1;
                 scroll_tick <= 1'b0;
             end
-            if (state == 2 && scroll_tick) begin
+            if (scroll_tick) begin
                 scroll_tick <= 1'b0;
-                if (scroll_pos == 4'd12)
-                    scroll_pos <= 0;
+                if (scroll_pos == 0)
+                    scroll_pos <= 4'd12;
                 else
-                    scroll_pos <= scroll_pos + 1'b1;
+                    scroll_pos <= scroll_pos - 1'b1;
             end
+        end
+        else begin
+            cnt <= 0;
+            scroll_tick <= 1'b0;
+            scroll_pos <= 4'd7;
         end
     end
 
@@ -163,6 +169,7 @@ module TopModule(
         bcd_ans[9]  = tmp % 10;  tmp = tmp / 10;
         bcd_ans[10] = tmp % 10;  tmp = tmp / 10;
         bcd_ans[11] = tmp % 10;
+        bcd_ans[12] = 4'hF; // Blank
     end
 
     /* ===== Display select ===== */
@@ -194,12 +201,13 @@ module TopModule(
             end
         end
         else if (state == 2) begin
-            d0 = bcd_ans[0];
-            d1 = bcd_ans[1];
-            d2 = bcd_ans[2];
-            d3 = bcd_ans[3];
-            d4 = bcd_ans[4];
-            d5 = scroll_pos;
+            d0 = bcd_ans[(scroll_pos+0)%13];
+            d1 = bcd_ans[(scroll_pos+1)%13];
+            d2 = bcd_ans[(scroll_pos+2)%13];
+            d3 = bcd_ans[(scroll_pos+3)%13];
+            d4 = bcd_ans[(scroll_pos+4)%13];
+            d5 = bcd_ans[(scroll_pos+5)%13];
+            //d5 = scroll_pos;
         end
     end
 

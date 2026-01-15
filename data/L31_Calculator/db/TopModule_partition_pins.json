@@ -188,6 +188,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "LED[4]",
+					"strict" : false
+				},
+				{
 					"name" : "KEY_COL[0]",
 					"strict" : false
 				},
@@ -208,10 +212,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY_ROW[1]",
-					"strict" : false
-				},
-				{
 					"name" : "KEY_ROW[3]",
 					"strict" : false
 				},
@@ -221,6 +221,10 @@
 				},
 				{
 					"name" : "KEY_ROW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY_ROW[1]",
 					"strict" : false
 				},
 				{
